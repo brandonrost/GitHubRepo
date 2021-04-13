@@ -1,0 +1,166 @@
+17:38:59.190 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+17:38:59.257 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @722ms to org.eclipse.jetty.util.log.Slf4jLog
+17:38:59.260 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17:39:00.280 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+17:39:00.281 [main] INFO  io.javalin.Javalin - Javalin started in 1023ms \o/
+17:50:19.945 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+17:50:19.958 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @696ms to org.eclipse.jetty.util.log.Slf4jLog
+17:50:19.960 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17:50:20.362 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+17:50:20.362 [main] INFO  io.javalin.Javalin - Javalin started in 404ms \o/
+17:50:29.103 [qtp445288316-24] INFO  com.revature.application.Application - GET request to endpoint /clients/1 recieved.
+17:50:47.455 [qtp445288316-17] INFO  com.revature.application.Application - GET request to endpoint /clients/2 recieved.
+17:50:52.840 [qtp445288316-19] INFO  com.revature.application.Application - GET request to endpoint /clients/3 recieved.
+17:53:36.092 [qtp445288316-12] INFO  com.revature.application.Application - GET request to endpoint /clients/we recieved.
+17:53:36.095 [qtp445288316-12] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID must be of type (int). User provided we.
+17:54:04.409 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+17:54:04.423 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @656ms to org.eclipse.jetty.util.log.Slf4jLog
+17:54:04.424 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17:54:04.951 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+17:54:04.951 [main] INFO  io.javalin.Javalin - Javalin started in 528ms \o/
+17:54:06.323 [qtp445288316-18] INFO  com.revature.application.Application - GET request to endpoint /clients/we recieved.
+17:54:06.329 [qtp445288316-18] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID must be of type (int). User provided 'we'.
+17:59:20.449 [qtp445288316-12] INFO  com.revature.application.Application - GET request to endpoint /clients/2 recieved.
+22:15:27.027 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+22:15:27.045 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @633ms to org.eclipse.jetty.util.log.Slf4jLog
+22:15:27.047 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+22:15:27.864 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+22:15:27.865 [main] INFO  io.javalin.Javalin - Javalin started in 819ms \o/
+11:13:39.638 [qtp445288316-24] INFO  com.revature.application.Application - GET request to endpoint /clients/ recieved.
+11:13:48.095 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+11:13:48.111 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @784ms to org.eclipse.jetty.util.log.Slf4jLog
+11:13:48.112 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+11:13:48.674 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+11:13:48.675 [main] INFO  io.javalin.Javalin - Javalin started in 564ms \o/
+11:13:51.462 [qtp445288316-24] INFO  com.revature.application.Application - GET request to endpoint /clients/ recieved.
+11:17:20.898 [qtp445288316-12] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+11:17:31.980 [qtp445288316-24] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+11:26:33.805 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+11:26:33.818 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1199ms to org.eclipse.jetty.util.log.Slf4jLog
+11:26:33.820 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+11:26:34.293 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+11:26:34.293 [main] INFO  io.javalin.Javalin - Javalin started in 474ms \o/
+11:26:40.338 [qtp445288316-24] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+12:00:56.922 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+12:00:56.935 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @757ms to org.eclipse.jetty.util.log.Slf4jLog
+12:00:56.936 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+12:00:57.380 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+12:00:57.380 [main] INFO  io.javalin.Javalin - Javalin started in 445ms \o/
+12:01:02.116 [qtp445288316-24] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+12:01:44.435 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+12:01:44.451 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @600ms to org.eclipse.jetty.util.log.Slf4jLog
+12:01:44.452 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+12:01:44.932 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+12:01:44.932 [main] INFO  io.javalin.Javalin - Javalin started in 481ms \o/
+12:01:46.375 [qtp445288316-24] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+12:28:48.283 [qtp445288316-13] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+14:12:07.882 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+14:12:07.896 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @818ms to org.eclipse.jetty.util.log.Slf4jLog
+14:12:07.898 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+14:12:08.399 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+14:12:08.399 [main] INFO  io.javalin.Javalin - Javalin started in 502ms \o/
+14:12:14.872 [qtp205962452-17] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+14:15:41.230 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+14:15:41.248 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1018ms to org.eclipse.jetty.util.log.Slf4jLog
+14:15:41.251 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+14:15:41.877 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+14:15:41.877 [main] INFO  io.javalin.Javalin - Javalin started in 628ms \o/
+14:15:46.645 [qtp205962452-19] INFO  com.revature.application.Application - GET request to endpoint /clients recieved.
+14:15:46.647 [qtp205962452-19] WARN  c.r.controller.ExceptionController - A user has requested access to Client table which is currently empty.
+14:48:46.618 [qtp205962452-12] INFO  com.revature.application.Application - GET request to endpoint /clients/2 recieved.
+14:48:46.620 [qtp205962452-12] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID entered could not be found. User provided '2'.
+14:49:29.190 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+14:49:29.206 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @895ms to org.eclipse.jetty.util.log.Slf4jLog
+14:49:29.208 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+14:49:29.761 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+14:49:29.762 [main] INFO  io.javalin.Javalin - Javalin started in 555ms \o/
+14:49:29.997 [qtp205962452-24] INFO  com.revature.application.Application - GET request to endpoint '/clients/2' recieved.
+14:49:30.001 [qtp205962452-24] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID entered could not be found. User provided '2'.
