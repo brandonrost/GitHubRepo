@@ -164,3 +164,16 @@
 14:49:29.762 [main] INFO  io.javalin.Javalin - Javalin started in 555ms \o/
 14:49:29.997 [qtp205962452-24] INFO  com.revature.application.Application - GET request to endpoint '/clients/2' recieved.
 14:49:30.001 [qtp205962452-24] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID entered could not be found. User provided '2'.
+10:41:34.990 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+10:41:35.019 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @718ms to org.eclipse.jetty.util.log.Slf4jLog
+10:41:35.020 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:41:35.376 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+10:41:35.376 [main] INFO  io.javalin.Javalin - Javalin started in 357ms \o/
