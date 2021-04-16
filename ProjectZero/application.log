@@ -1516,3 +1516,17 @@ java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" bec
 17:28:46.739 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
 17:28:46.739 [main] INFO  io.javalin.Javalin - Javalin started in 262ms \o/
 17:28:49.358 [qtp1483298597-27] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/1/accounts/1' recieved.
+17:30:38.291 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+17:30:38.320 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @640ms to org.eclipse.jetty.util.log.Slf4jLog
+17:30:38.321 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17:30:38.577 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+17:30:38.578 [main] INFO  io.javalin.Javalin - Javalin started in 258ms \o/
+17:30:41.760 [qtp1483298597-27] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/1/accounts/1' recieved.
