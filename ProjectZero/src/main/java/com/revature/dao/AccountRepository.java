@@ -21,8 +21,14 @@ public class AccountRepository {
 
 	public ArrayList<Account> getAccountByBalance(String clientID, String greaterAmount, String lesserAmount) {
 		ArrayList<Account> accounts = new ArrayList<Account>(); 
-		accounts.add(new Account("Savings","2ndAccount",(Integer.parseInt(greaterAmount) - 10)));
-		accounts.add(new Account("Checking","Checking Account", (Integer.parseInt(lesserAmount)+10))); 
+		if(greaterAmount == "") {
+			greaterAmount= "0"; 
+		}
+		if(lesserAmount == "") {
+			lesserAmount = "0";
+		}
+		accounts.add(new Account("Savings","2ndAccount",(Integer.valueOf(greaterAmount) - 10)));
+		accounts.add(new Account("Checking","Checking Account", (Integer.valueOf(lesserAmount)+10))); 
 		return accounts;
 	}
 

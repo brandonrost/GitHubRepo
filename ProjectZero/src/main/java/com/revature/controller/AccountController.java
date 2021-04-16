@@ -31,10 +31,24 @@ public class AccountController implements Controller {
 	private Handler getAccounts = ctx ->{
 		String clientID = ctx.pathParam("clientid"); 
 		
-		ArrayList<Account> accounts = accountService.getAccounts(clientID); 
+		String greaterAmount = "";
+		String lesserAmount = ""; 
 		
-		ctx.json(accounts); 
-		ctx.status(200); 
+		if(ctx.queryParam("amountLessThan")!=null) greaterAmount = ctx.queryParam("amountLessThan"); 
+		if(ctx.queryParam("amountGreaterThan")!=null) lesserAmount = ctx.queryParam("amountGreaterThan"); 
+		
+		if(greaterAmount=="" && lesserAmount=="") {
+			ArrayList<Account> accounts = accountService.getAccounts(clientID); 
+			
+			ctx.json(accounts); 
+			ctx.status(200); 
+		}else {
+			
+			ArrayList<Account> accounts = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount); 
+			
+			ctx.json(accounts);
+			ctx.status(200); 		
+		}
 	};
 	
 	private Handler getAccountByBalance = ctx ->{
@@ -43,7 +57,6 @@ public class AccountController implements Controller {
 		String greaterAmount = ctx.queryParam("amountLessThan");
 		String lesserAmount = ctx.queryParam("ammountGreaterThan");
 		
-		System.out.println(ctx.queryString() + clientID + greaterAmount + lesserAmount);
 		
 		ArrayList<Account> accounts = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount); 
 		
@@ -87,8 +100,8 @@ public class AccountController implements Controller {
 	@Override
 	public void mapEndpoints(Javalin app) {
 		app.post("/clients/:clientid/accounts", addAccount); //		POST /clients/{client_id}/accounts: Create a new account for a client with id of X (if client exists)
-		app.get("/clients/:clientid/account", getAccounts); //		GET /clients/{client_id}/accounts: Get all accounts for client with id of X (if client exists)
-		app.get("/clients/:clientid/accounts?amountLessThan=greateramount&ammountGreaterThan=lesseramount", getAccountByBalance); //		GET /clients/{client_id}/accounts?amountLessThan=2000&amountGreaterThan=400: Get all accounts for client id of X with balances between 400 and 2000 (if client exists)
+		app.get("/clients/:clientid/accounts", getAccounts); //		GET /clients/{client_id}/accounts: Get all accounts for client with id of X (if client exists)
+		//the above ^ does this > when query params are added//		GET /clients/{client_id}/accounts?amountLessThan=2000&amountGreaterThan=400: Get all accounts for client id of X with balances between 400 and 2000 (if client exists)
 		app.get("/clients/:clientid/accounts/:accountid", getAccount); //		GET /clients/{client_id}/accounts/{account_id}: Get account with id of Y belonging to client with id of X (if client and account exist AND if account belongs to client)
 		app.put("/clients/:clientid/accounts/:accountid", updateAccount);//		PUT /clients/{client_id}/accounts/{account_id}: Update account with id of Y belonging to client with id of X (if client and account exist AND if account belongs to client)
 		app.delete("/clients/:clientid/accounts/:accountid", deleteAccount); //		DELETE /clients/{client_id}/accounts/{account_id}: Delete account with id of Y belonging to client with id of X (if client and account exist AND if account belongs to client)

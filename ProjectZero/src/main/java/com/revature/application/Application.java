@@ -23,7 +23,11 @@ public class Application {
 		app.before(ctx ->{
 			String URI = ctx.req.getRequestURI(); 
 			String httpMethod = ctx.req.getMethod();
-			logger.info(httpMethod + " request to endpoint '" + URI + "' recieved."); 
+			if(ctx.req.getQueryString()==null) {
+				logger.info(httpMethod + " request to endpoint '" + URI + "' recieved."); 
+			}else {
+				logger.info(httpMethod + " request to endpoint '" + URI + "' recieved with QueryParameterString of '" + ctx.req.getQueryString() +"'.");
+			}
 			});
 		
 		mapControllers(new ClientController(), new ExceptionController(), new StaticFileController(), new AccountController());
