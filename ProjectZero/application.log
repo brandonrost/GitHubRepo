@@ -1664,3 +1664,4 @@ java.lang.NumberFormatException: For input string: ""
 18:09:53.849 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
 18:09:53.850 [main] INFO  io.javalin.Javalin - Javalin started in 391ms \o/
 18:09:55.160 [qtp1412794598-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/1/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+18:10:08.800 [qtp1412794598-17] INFO  com.revature.application.Application - GET request to endpoint '/clients/1/accounts' recieved with QueryParameterString of 'amountLessThan=1000&amountGreaterThan=500'.

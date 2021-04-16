@@ -42,4 +42,14 @@ public class AccountRepository {
 		return updatedAccount;
 	}
 
+	public Account deleteAccount(String clientID, String accountID) {
+		Account deletedAccount; 
+		if(Integer.valueOf(clientID)==1 && Integer.valueOf(accountID)==1) {
+			deletedAccount = new Account("Checking","DeletedAccount", 10000); 
+		}else {
+			deletedAccount = new Account("Checking","AccountNotDeleted",10); 
+		}
+		return deletedAccount;
+	}
+
 }

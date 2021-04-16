@@ -51,19 +51,6 @@ public class AccountController implements Controller {
 		}
 	};
 	
-	private Handler getAccountByBalance = ctx ->{
-		System.out.println("BlahBlahBlah");
-		String clientID = ctx.pathParam("clientid");
-		String greaterAmount = ctx.queryParam("amountLessThan");
-		String lesserAmount = ctx.queryParam("ammountGreaterThan");
-		
-		
-		ArrayList<Account> accounts = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount); 
-		
-		ctx.json(accounts);
-		ctx.status(200); 
-	};
-	
 	private Handler getAccount = ctx->{
 		String clientID = ctx.pathParam("clientid");
 		String accountID = ctx.pathParam("accountid");
@@ -92,7 +79,9 @@ public class AccountController implements Controller {
 		String clientID = ctx.pathParam("clientid");
 		String accountID = ctx.pathParam("accountid");
 		
-		//ctx.json(account);
+		Account account = accountService.deleteAccount(clientID, accountID); 
+		
+		ctx.json(account);
 		ctx.status(200); 
 		
 	};
