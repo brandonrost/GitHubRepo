@@ -3,9 +3,11 @@ package com.revature.application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.revature.controller.AccountController;
 import com.revature.controller.ClientController;
 import com.revature.controller.Controller;
 import com.revature.controller.ExceptionController;
+import com.revature.controller.StaticFileController;
 
 import io.javalin.Javalin;
 
@@ -24,7 +26,7 @@ public class Application {
 			logger.info(httpMethod + " request to endpoint '" + URI + "' recieved."); 
 			});
 		
-		mapControllers(new ClientController(), new ExceptionController());
+		mapControllers(new ClientController(), new ExceptionController(), new StaticFileController(), new AccountController());
 		
 		app.start(7000);
 		

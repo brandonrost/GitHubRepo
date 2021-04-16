@@ -3,6 +3,8 @@ package com.revature.service;
 import java.util.ArrayList;
 
 import com.revature.dao.ClientRepository;
+import com.revature.dto.PostClientDTO;
+import com.revature.dto.PutClientDTO;
 import com.revature.exceptions.BadParameterException;
 import com.revature.exceptions.ClientListNullException;
 import com.revature.exceptions.ClientNotFoundException;
@@ -43,6 +45,26 @@ public class ClientService {
 			throw new ClientNotFoundException("Client ID entered could not be found. User provided '"+ stringID + "'.");
 		}
 					
+	}
+
+	public Client addClient(PostClientDTO clientDTO) {
+		//The next line will be used when establishing connection to database		
+		//Client client = clientRepository.addClient(clientDTO);
+		
+		//for now pass DTO client
+		Client client = new Client(clientDTO.getFirstName(), clientDTO.getLastName()); 
+		return client; 
+	}
+
+	public Client updateClient(String clientID, PutClientDTO clientDTO) {
+		Client clientToBeUpdated = new Client(clientID, clientDTO.getFirstName(), clientDTO.getLastName()); 
+		Client updatedClient = clientRepository.updateClient(clientToBeUpdated); 
+		return updatedClient; 
+	}
+
+	public Client deleteClient(String clientID) {
+		Client clientToBeDeleted = clientRepository.deleteClient(clientID); 
+		return clientToBeDeleted;
 	}
 
 }

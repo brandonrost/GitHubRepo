@@ -15,6 +15,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.revature.dao.ClientRepository;
+import com.revature.dto.PostClientDTO;
 import com.revature.exceptions.BadParameterException;
 import com.revature.exceptions.ClientListNullException;
 import com.revature.exceptions.ClientNotFoundException;
@@ -41,7 +42,7 @@ public class ClientServiceTest {
 		clientArray.add(new Client("2","Ben","Aflec"));
 		
 		when(mockClientRepository.getClients())
-		.thenReturn(clientArray); 
+		.thenReturn(clientArray);
 		
 	}
 	

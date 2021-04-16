@@ -21,6 +21,12 @@ public class Client {
 		this.accounts = accounts;
 	}
 	
+	public Client(String firstName, String lastName) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName; 
+	}
+	
 
 	public String getId() {
 		return id;

@@ -2,6 +2,8 @@ package com.revature.dao;
 
 import java.util.ArrayList;
 
+import com.revature.dto.PostClientDTO;
+import com.revature.dto.PutClientDTO;
 import com.revature.models.Client;
 
 public class ClientRepository {
@@ -27,6 +29,24 @@ public class ClientRepository {
 		return clientArray;
 	}
 	
+	public Client addClient(PostClientDTO clientDTO) {
+		Client clientToBeAdded = new Client("Bill", "Burr");  
+		return clientToBeAdded; 
+	}
+
+	public Client updateClient(Client clientToBeUpdated) {
+		//UPDATE table WHERE client.id = clientDTO
+		//return the clients new attributes (what was updated)
+		
+		Client updatedClient = new Client(clientToBeUpdated.getId(), clientToBeUpdated.getFirstName(), clientToBeUpdated.getLastName()); 
+		return updatedClient;
+	}
+
+	public Client deleteClient(String clientID) {
+		//DELETE ... FROM client WHERE client.id = clientID
+		Client deletedClient = new Client(clientID, "Tom", "Cruise"); 
+		return deletedClient;
+	}
 	
 
 }
