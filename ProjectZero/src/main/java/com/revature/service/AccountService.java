@@ -42,4 +42,10 @@ public class AccountService {
 		return accountRepository.updateAccount(clientID, accountID, accountToBeUpdated);
 	}
 
+	public Account deleteAccount(String clientID, String accountID) {
+		System.out.println(clientID + " " + accountID);
+		// TODO Auto-generated method stub
+		return accountRepository.deleteAccount(clientID, accountID); 
+	}
+
 }

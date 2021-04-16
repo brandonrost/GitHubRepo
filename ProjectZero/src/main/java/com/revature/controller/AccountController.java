@@ -29,27 +29,32 @@ public class AccountController implements Controller {
 	};
 	
 	private Handler getAccounts = ctx ->{
-		String clientID = ctx.pathParam("clientid"); 
+		String clientID = ctx.pathParam("clientid");
 		
-		ArrayList<Account> accounts = accountService.getAccounts(clientID); 
+		String amtlessthan = "amountLessThan"; 
+		String amtgreaterthan = "amountGreaterThan";		
 		
-		ctx.json(accounts); 
-		ctx.status(200); 
+		
+		if((ctx.queryParam(amtlessthan)==null)&& (ctx.queryParam(amtgreaterthan)==null)){
+			//what to do if there are no query params
+			System.out.println("You do not have any query parameters being used");
+			ArrayList<Account> accounts = accountService.getAccounts(clientID); 
+			ctx.json(accounts); 
+			ctx.status(200); 
+		}else {		
+			String greaterAmount = "0"; 
+			String lesserAmount = "0";
+			
+			if(ctx.queryParam(amtlessthan)!=null) greaterAmount = ctx.queryParam("amountLessThan"); 			
+			if(ctx.queryParam(amtgreaterthan)!=null) lesserAmount = ctx.queryParam("amountGreaterThan"); 
+			
+			ArrayList<Account> accounts = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount); 
+			
+			ctx.json(accounts);
+			ctx.status(200); 
+		}
 	};
 	
-	private Handler getAccountByBalance = ctx ->{
-		System.out.println("BlahBlahBlah");
-		String clientID = ctx.pathParam("clientid");
-		String greaterAmount = ctx.queryParam("amountLessThan");
-		String lesserAmount = ctx.queryParam("ammountGreaterThan");
-		
-		System.out.println(ctx.queryString() + clientID + greaterAmount + lesserAmount);
-		
-		ArrayList<Account> accounts = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount); 
-		
-		ctx.json(accounts);
-		ctx.status(200); 
-	};
 	
 	private Handler getAccount = ctx->{
 		String clientID = ctx.pathParam("clientid");
@@ -79,7 +84,9 @@ public class AccountController implements Controller {
 		String clientID = ctx.pathParam("clientid");
 		String accountID = ctx.pathParam("accountid");
 		
-		//ctx.json(account);
+		Account account = accountService.deleteAccount(clientID, accountID); 
+		
+		ctx.json(account);
 		ctx.status(200); 
 		
 	};
@@ -87,8 +94,8 @@ public class AccountController implements Controller {
 	@Override
 	public void mapEndpoints(Javalin app) {
 		app.post("/clients/:clientid/accounts", addAccount); //		POST /clients/{client_id}/accounts: Create a new account for a client with id of X (if client exists)
-		app.get("/clients/:clientid/account", getAccounts); //		GET /clients/{client_id}/accounts: Get all accounts for client with id of X (if client exists)
-		app.get("/clients/:clientid/accounts?amountLessThan=greateramount&ammountGreaterThan=lesseramount", getAccountByBalance); //		GET /clients/{client_id}/accounts?amountLessThan=2000&amountGreaterThan=400: Get all accounts for client id of X with balances between 400 and 2000 (if client exists)
+		app.get("/clients/:clientid/accounts", getAccounts); //		GET /clients/{client_id}/accounts: Get all accounts for client with id of X (if client exists)
+		//The above also accomplishes this > if query params are added //		GET /clients/{client_id}/accounts?amountLessThan=2000&amountGreaterThan=400: Get all accounts for client id of X with balances between 400 and 2000 (if client exists)
 		app.get("/clients/:clientid/accounts/:accountid", getAccount); //		GET /clients/{client_id}/accounts/{account_id}: Get account with id of Y belonging to client with id of X (if client and account exist AND if account belongs to client)
 		app.put("/clients/:clientid/accounts/:accountid", updateAccount);//		PUT /clients/{client_id}/accounts/{account_id}: Update account with id of Y belonging to client with id of X (if client and account exist AND if account belongs to client)
 		app.delete("/clients/:clientid/accounts/:accountid", deleteAccount); //		DELETE /clients/{client_id}/accounts/{account_id}: Delete account with id of Y belonging to client with id of X (if client and account exist AND if account belongs to client)

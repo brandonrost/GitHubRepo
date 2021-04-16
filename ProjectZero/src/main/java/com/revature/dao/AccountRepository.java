@@ -36,4 +36,13 @@ public class AccountRepository {
 		return updatedAccount;
 	}
 
+	public Account deleteAccount(String clientID, String accountID) {
+		if(Integer.valueOf(accountID) == 1 && Integer.valueOf(accountID) == 1) {
+			Account deletedAccount = new Account("Checking","deleteAccount",100000); 
+			return deletedAccount;
+		}else {
+			return null; 
+		}
+	}
+
 }
