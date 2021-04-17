@@ -19,6 +19,7 @@ import com.revature.dto.PostClientDTO;
 import com.revature.exceptions.BadParameterException;
 import com.revature.exceptions.ClientListNullException;
 import com.revature.exceptions.ClientNotFoundException;
+import com.revature.exceptions.DatabaseException;
 import com.revature.models.Client;
 
 public class ClientServiceTest {
@@ -28,7 +29,7 @@ public class ClientServiceTest {
 	public static ArrayList<Client> clientArray;
 
 	@BeforeClass
-	public static void setUp() {
+	public static void setUp() throws DatabaseException {
 		mockClientRepository = mock(ClientRepository.class);
 
 		when(mockClientRepository.getClientById(eq(1))).
@@ -82,14 +83,14 @@ public class ClientServiceTest {
 	}
 	
 	@Test
-	public void test_getClients_ClientListHasItems() throws ClientListNullException { 
+	public void test_getClients_ClientListHasItems() throws ClientListNullException, DatabaseException { 
 		ArrayList<Client> actual = clientService.getClients(); 
 		ArrayList<Client> expected = clientArray;
 		assertEquals(expected, actual); 
 	}
 	
 	@Test(expected=ClientListNullException.class)
-	public void test_getClients_ClientListNull() throws ClientListNullException{
+	public void test_getClients_ClientListNull() throws ClientListNullException, DatabaseException{
 		when(mockClientRepository.getClients()).thenReturn(null); 
 		ArrayList<Client> actual = clientService.getClients(); 
 	}

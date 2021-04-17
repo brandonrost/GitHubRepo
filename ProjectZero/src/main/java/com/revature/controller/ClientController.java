@@ -30,9 +30,7 @@ public class ClientController implements Controller {
 
 		ctx.html("<h1>AddClient<h1>");
 		ctx.json(insertedClient);
-		// ctx.result("Client Added Successfully!\nID: " + insertedClient.getId() +
-		// "\nFirst Name: " + insertedClient.getFirstName() +"\nLastName: " +
-		// insertedClient.getLastName());
+		ctx.status(201); 
 	};
 
 	private Handler getClients = ctx -> {
