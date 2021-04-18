@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.revature.dto.PostAccountDTO;
 import com.revature.models.Account;
+import com.revature.models.Client;
 import com.revature.service.AccountService;
 
 import io.javalin.Javalin;
@@ -22,9 +23,24 @@ public class AccountController implements Controller {
 		
 		PostAccountDTO accountDTO = ctx.bodyAsClass(PostAccountDTO.class); 
 		
-		Account account = this.accountService.addAccount(clientID, accountDTO); 
+		Client client = this.accountService.addAccount(clientID, accountDTO); 
 		
-		ctx.json(account); 
+		StringBuilder htmlString = new StringBuilder();
+		htmlString.append("<h1>Added Account</h1>\n");
+		htmlString.append("<p><h2>ClientName:" + client.getFirstName()+" " +client.getLastName()+"</h2></p>\n");
+		
+		Account client_account = new Account(); 		
+		for(Account account : client.getAccounts()) {
+			client_account.setAccountId(account.getAccountId());
+			client_account.setAccountType(account.getAccountType());
+			client_account.setAccountName(account.getAccountName());
+			client_account.setBalance(account.getBalance()); 
+			htmlString.append("<p>Account Type: " + client_account.getAccountType() + "\n"
+					+ "Account Name: " + client_account.getAccountName() + "\n"
+							+ "Account Balance: " + client_account.getBalance() + "</p>");			
+		}
+		
+		ctx.html(htmlString.toString());
 		ctx.status(201); 
 	};
 	

@@ -53,7 +53,7 @@ public class ClientServiceTest {
 	}
 
 	@Test
-	public void test_getClientByID_validIDof1() throws BadParameterException, ClientNotFoundException {
+	public void test_getClientByID_validIDof1() throws BadParameterException, ClientNotFoundException, DatabaseException {
 		Client actual = clientService.getClientById("1");
 		
 		Client expected = new Client("1", "Tom", "Hanks"); 
@@ -62,17 +62,17 @@ public class ClientServiceTest {
 	}
 	
 	@Test(expected=ClientNotFoundException.class)
-	public void test_getClientByID_idNotFoundof3()  throws BadParameterException, ClientNotFoundException{
+	public void test_getClientByID_idNotFoundof3()  throws BadParameterException, ClientNotFoundException, DatabaseException{
 		Client actual = clientService.getClientById("3"); 
 	}
 	
 	@Test(expected=BadParameterException.class)
-	public void test_getClientByID_idNotFormattedCorrectly() throws BadParameterException, ClientNotFoundException{
+	public void test_getClientByID_idNotFormattedCorrectly() throws BadParameterException, ClientNotFoundException, DatabaseException{
 		Client actual = clientService.getClientById("abc"); 
 	}
 	
 	@Test
-	public void test_getExceptionMessage_getClientByID_idNotFormattedCorrectly()throws BadParameterException, ClientNotFoundException{
+	public void test_getExceptionMessage_getClientByID_idNotFormattedCorrectly()throws BadParameterException, ClientNotFoundException, DatabaseException{
 		try {
 			clientService.getClientById("abc");
 			

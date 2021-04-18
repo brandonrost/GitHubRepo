@@ -38,19 +38,26 @@ public class ClientService {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
 			
-		}catch(SQLException e) {
-			throw new DatabaseException("Could not connect with the database."); 
+			if (clientArray == null) {
+				throw new ClientListNullException("There are no Clients in the 'Client Table' at this moment.");
+			}
+			
+		}catch(SQLException e1) {
+			throw new DatabaseException("Could not connect with the database." + e1.getMessage()); 
+		}catch(ClientListNullException e2) {
+			throw new ClientListNullException("\"There are no Clients in the 'Client Table' at this moment."); 
 		}
 		
-		if (clientArray == null) {
-			throw new ClientListNullException("There are no Clients in the 'Client Table' at this moment.");
-		}
+		
 		
 		return clientArray;
 	}
 
-	public Client getClientById(String stringID) throws BadParameterException, ClientNotFoundException {
+	public Client getClientById(String stringID) throws BadParameterException, ClientNotFoundException, DatabaseException {
 		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.clientRepository.setConnection(connection);
+			
 			int id = Integer.parseInt(stringID);
 			Client client = clientRepository.getClientById(id);
 			if (client == null) {
@@ -58,11 +65,12 @@ public class ClientService {
 			}
 			return client;
 
-		} catch (NumberFormatException e) {
+		} catch (NumberFormatException e1) {
 			throw new BadParameterException("Client ID must be of type (int). User provided '" + stringID + "'.");
-		} catch (ClientNotFoundException e) {
-			throw new ClientNotFoundException(
-					"Client ID entered could not be found. User provided '" + stringID + "'.");
+		} catch (ClientNotFoundException e2) {
+			throw new ClientNotFoundException("Client ID entered could not be found. User provided '" + stringID + "'.");
+		} catch (SQLException e3) {
+			throw new DatabaseException("Could not connect to the database." + e3.getMessage()); 
 		}
 
 	}

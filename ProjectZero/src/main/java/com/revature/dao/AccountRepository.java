@@ -1,15 +1,89 @@
 package com.revature.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.revature.dto.PostAccountDTO;
+import com.revature.exceptions.AccountNotAddedException;
+import com.revature.exceptions.DatabaseException;
 import com.revature.models.Account;
+import com.revature.models.Client;
 
 public class AccountRepository {
+	private Logger logger = LoggerFactory.getLogger(AccountRepository.class); 
+	private Connection connection;
+
+	public AccountRepository() {
+		super();
+	}
+
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+
 	
-	public Account addAccount(String clientID, PostAccountDTO accountDTO) {
-		Account account = new Account(accountDTO.getAccountType(), accountDTO.getAccountName(), accountDTO.getBalance()); 
-		return account; 
+	public Account addAccount(String clientID, PostAccountDTO accountDTO) throws AccountNotAddedException, DatabaseException{
+		logger.info("Connecting to database inside the "+ this.getClass());
+		try {
+			String sql = "INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);";
+
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setString(1, accountDTO.getAccountType());
+			pstmt.setString(2, accountDTO.getAccountName());
+			pstmt.setInt(3, accountDTO.getBalance());
+
+			int recordsAdded = pstmt.executeUpdate();
+			logger.info("Executed SQL Statment: " + sql);
+
+			if (recordsAdded != 1) {
+				throw new DatabaseException("Couldn't add Account to the Database.");
+			}
+			
+			String getAccountIDSQL = "SELECT LAST_INSERT_ID();";
+			
+			Statement stmt = connection.createStatement();
+			
+			int accountIDAdded = stmt.executeUpdate(getAccountIDSQL);
+			System.out.println(String.valueOf(accountIDAdded));
+			
+			if(accountIDAdded != 1) {
+				throw new AccountNotAddedException("Could not add Account to the Database."); 
+			}
+
+			ResultSet rs = stmt.getResultSet(); 
+			int account_id;
+			if (rs.next()) {
+				account_id = rs.getInt(1);
+			} else {
+				throw new DatabaseException("AccountID was not generated; therefore, Client was not successfully added.");
+			}
+			
+			String addToClient_AccountSQL = "INSERT INTO client_account(client_id,account_id)"
+					+ "VALUES(?,?);";
+			PreparedStatement pstmt2 = connection.prepareStatement(addToClient_AccountSQL, Statement.RETURN_GENERATED_KEYS); 
+			pstmt2.setInt(1, Integer.valueOf(clientID));
+			pstmt2.setInt(2, account_id);
+			
+			int client_account_added = pstmt.executeUpdate();
+
+			if (client_account_added != 1) {
+				throw new DatabaseException("Couldn't add Account to the Database.");
+			}
+			
+			Account account = new Account(String.valueOf(account_id), accountDTO.getAccountType(), accountDTO.getAccountName(), accountDTO.getBalance()); 
+			return account; 
+
+		} catch (SQLException e) {
+			throw new DatabaseException(
+					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
+		}
 	}
 
 	public ArrayList<Account> getAccounts(String clientID) {

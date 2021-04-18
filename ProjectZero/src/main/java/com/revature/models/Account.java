@@ -3,11 +3,19 @@ package com.revature.models;
 public class Account {
 	private String accountId; 
 	private String accountType;
-	private String accountName;
+	private String accountName = "DefaultName";
 	private int balance;
 	
 	public Account() {
 		super(); 
+	}
+	
+	public Account(String accountId, String accountType, String accountName, int balance) {
+		super(); 
+		this.accountId = accountId;
+		this.accountType = accountType;
+		this.accountName = accountName; 
+		this.balance = balance; 
 	}
 	
 	public Account(String accountType, int balance) {
