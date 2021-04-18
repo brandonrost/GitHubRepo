@@ -99,15 +99,46 @@ public class ClientService {
 		}
 	}
 
-	public Client updateClient(String clientID, PutClientDTO clientDTO) {
-		Client clientToBeUpdated = new Client(clientID, clientDTO.getFirstName(), clientDTO.getLastName());
-		Client updatedClient = clientRepository.updateClient(clientToBeUpdated);
-		return updatedClient;
+	public Client updateClient(String clientID, PutClientDTO clientDTO) throws BadParameterException, SQLException, DatabaseException, EmptyClientNameException {
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int id = Integer.parseInt(clientID);
+			
+			if(clientDTO.getFirstName().trim().strip() == "" || clientDTO.getLastName().trim().strip() == "") {
+				throw new EmptyClientNameException("Client name can not be null. Please fill in first and last name."); 
+			}
+			Client updatedClient = new Client(clientID, clientDTO.getFirstName(), clientDTO.getLastName());
+			Client client = clientRepository.updateClient(updatedClient);
+			
+			return client; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the Database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client ID must be of type (int). User provided '" + clientID + "'."); 
+		}
 	}
 
-	public Client deleteClient(String clientID) {
-		Client clientToBeDeleted = clientRepository.deleteClient(clientID);
-		return clientToBeDeleted;
+	public Client deleteClient(String clientID) throws DatabaseException, BadParameterException {
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int id = Integer.parseInt(clientID);
+			
+			Client client = clientRepository.deleteClient(clientID);
+			
+			return client; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the Database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client ID must be of type (int). User provided '" + clientID + "'."); 
+		}
 	}
 
 }

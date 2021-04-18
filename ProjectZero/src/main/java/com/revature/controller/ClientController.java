@@ -44,9 +44,14 @@ public class ClientController implements Controller {
 		String clientID = ctx.pathParam("clientid");
 
 		Client client = clientService.getClientById(clientID);
+		
+		if(client.getFirstName() == null) {
+			ctx.status(404); 
+		}else {
+			ctx.status(200); 
+		}
 
 		ctx.json(client);
-		ctx.status(200);
 	};
 
 	private Handler updateClient = ctx -> {
@@ -57,7 +62,7 @@ public class ClientController implements Controller {
 		Client clientToBeUpdated = clientService.updateClient(clientID, clientDTO);
 		
 		ctx.json(clientToBeUpdated);
-		ctx.status(200); 
+		ctx.status(204); 
 	};
 	
 	private Handler deleteClient = ctx -> {
@@ -66,7 +71,7 @@ public class ClientController implements Controller {
 		Client client = clientService.deleteClient(clientID); 
 		
 		ctx.json(client); 
-		ctx.status(200); 
+		ctx.status(202); 
 	};
 
 	@Override

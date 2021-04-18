@@ -28,9 +28,9 @@ public class AccountController implements Controller {
 		StringBuilder htmlString = new StringBuilder();
 		htmlString.append("<h1>Added Account</h1>\n");
 		htmlString.append("<p><h3>ClientName: " + client.getFirstName()+" " +client.getLastName()+"</h3></p>\n");
-		
-		Account client_account = new Account(); 		
+		 		
 		for(Account account : client.getAccounts()) {
+			Account client_account = new Account();
 			client_account.setAccountId(account.getAccountId());
 			client_account.setAccountType(account.getAccountType());
 			client_account.setAccountName(account.getAccountName());
@@ -38,7 +38,6 @@ public class AccountController implements Controller {
 			htmlString.append("<p>Account Type: " + client_account.getAccountType() + "</p>"
 					+ "<p>Account Name: " + client_account.getAccountName() + "</p>"
 							+ "<p>Account Balance: " + client_account.getBalance() + "</p>");
-			htmlString.append("<p></p>"); 
 		}
 		
 		ctx.html(htmlString.toString());

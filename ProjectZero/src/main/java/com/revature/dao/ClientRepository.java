@@ -146,19 +146,79 @@ public class ClientRepository {
 
 	}
 
-	public Client updateClient(Client clientToBeUpdated) {
-		// UPDATE table WHERE client.id = clientDTO
-		// return the clients new attributes (what was updated)
+	public Client updateClient(Client clientToBeUpdated) throws DatabaseException {
+		logger.info("Accessing the database through the " + this.getClass());
+		try {
+			String sql = "UPDATE client SET client_first_name = ?, client_last_name = ? WHERE client.id = ?";
 
-		Client updatedClient = new Client(clientToBeUpdated.getId(), clientToBeUpdated.getFirstName(),
-				clientToBeUpdated.getLastName());
-		return updatedClient;
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setString(1, clientToBeUpdated.getFirstName());
+			pstmt.setString(2, clientToBeUpdated.getLastName());
+			pstmt.setInt(3, Integer.valueOf( clientToBeUpdated.getId()));
+			
+			int recordsAdded = pstmt.executeUpdate(); 
+			
+			if(recordsAdded == 0) {
+				throw new DatabaseException("Could not update Client with new information."); 
+			}
+			
+			logger.info("Executed SQL Statement: " + sql);
+			
+			return clientToBeUpdated;
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Something went wrong with the database query. Exception Message: " + e.getMessage()); 
+		}
 	}
 
-	public Client deleteClient(String clientID) {
-		// DELETE ... FROM client WHERE client.id = clientID
-		Client deletedClient = new Client(clientID, "Tom", "Cruise");
-		return deletedClient;
+	public Client deleteClient(String clientID) throws DatabaseException {
+		logger.info("Accessing the database through the " + this.getClass());
+		try {
+			String sql = "SELECT * FROM client WHERE client.id = ?;";
+			
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setInt(1, Integer.valueOf(clientID));
+			
+			boolean recordsAdded = pstmt.execute();
+			
+			System.out.println(recordsAdded); 
+			
+			if(recordsAdded == false) {
+				throw new DatabaseException("Could not delete Client from the 'client' table."); 
+			}
+			
+			logger.info("Executed SQL Statement: " + sql);
+			
+			ResultSet rs = pstmt.getResultSet(); 
+			
+			Client client = new Client(); 			
+			if(rs.next()) {
+				client.setId(clientID);
+				client.setFirstName(rs.getString(2));
+				client.setLastName(rs.getString(3));
+				System.out.println(client.toString());
+			}else {
+				throw new DatabaseException("Could not delete Client from the 'client' table."); 
+			}
+						
+			String sql2 = "DELETE FROM client WHERE client.id = ?;";
+
+			PreparedStatement pstmt2 = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);
+			pstmt2.setInt(1, Integer.valueOf(clientID));
+			
+			int recordsAdded2 = pstmt2.executeUpdate(); 
+			
+			if(recordsAdded2 == 0) {
+				throw new DatabaseException("Could not delete Client from the 'client' table."); 
+			}
+			
+			logger.info("Executed SQL Statement: " + sql);
+			
+			return client;
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Something went wrong with the database query. Exception Message: " + e.getMessage()); 
+		}
 	}
 
 }
