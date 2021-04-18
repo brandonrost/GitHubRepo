@@ -43,6 +43,7 @@ public class AccountService {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.accountRepository.setConnection(connection);
+			this.clientRepository.setConnection(connection);
 			connection.setAutoCommit(true);
 			
 			int client_id = Integer.parseInt(clientID); 
@@ -51,8 +52,8 @@ public class AccountService {
 				throw new EmptyAccountTypeException("Account Type can not be empty."); 
 			}
 			
-			//Client client = clientRepository.getClientById(client_id);// need to add functionality before this works
-			Client client = new Client(clientID, "Tom", "Cruise"); //for now use this
+			Client client = clientRepository.getClientById(client_id);
+			//Client client = new Client(clientID, "Tom", "Cruise"); //for now use this
 			Account account = accountRepository.addAccount(clientID, accountDTO); 
 			
 			System.out.println(account.toString());

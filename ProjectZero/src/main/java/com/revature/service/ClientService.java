@@ -57,6 +57,7 @@ public class ClientService {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
 			
 			int id = Integer.parseInt(stringID);
 			
