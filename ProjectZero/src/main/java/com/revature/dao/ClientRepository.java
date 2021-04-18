@@ -27,28 +27,42 @@ public class ClientRepository {
 		this.connection = connection;
 	}
 
-	public Client getClientById(int id) {
+	public Client getClientById(int id) throws DatabaseException {
 		
-//		try {
-//			String sql = "INSERT INTO client (client_first_name, client_last_name) VALUES (?,?)";
-//
-//			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-//			pstmt.setString(1, clientDTO.getFirstName());
-//			pstmt.setString(2, clientDTO.getLastName());
-//
-//			int recordsAdded = pstmt.executeUpdate();
-//
-//			if (recordsAdded != 1) {
-//				throw new DatabaseException("Couldn't add Client to the Database.");
-//			}
-//
-//			ResultSet rs = pstmt.getGeneratedKeys();
-//			
-//			
-//		} catch (SQLException e) {
-//			throw new DatabaseException(
-//					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
-//		}
+		try {
+			String sql = "SELECT c.id, c.client_first_name, c.client_last_name, a.account_type, a.account_name, a.account_balance\r\n"
+					+ "FROM client AS c\r\n"
+					+ "LEFT JOIN client_account AS ca ON c.id = ca.client_id \r\n"
+					+ "LEFT JOIN account AS a ON a.id = ca.account_id\r\n"
+					+ "WHERE client_id = ?;"; 
+
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setInt(1, id);
+
+			int recordsAdded = pstmt.executeUpdate();
+
+			if (recordsAdded != 1) {
+				throw new DatabaseException("Couldn't add Client to the Database.");
+			}
+
+			ResultSet rs = pstmt.getGeneratedKeys();
+			Client client = new Client(); 			
+			while(rs.next()) {
+				if(rs.isFirst()) {
+					String client_id = String.valueOf(rs.getInt(1));
+					String client_first_name = rs.getString(2);
+					String client_last_name = rs.getString(3); 
+					client.setFirstName(client_first_name);
+					client.setLastName(client_last_name);
+					client.setId(client_id);
+				}
+			}
+			
+			
+		} catch (SQLException e) {
+			throw new DatabaseException(
+					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
+		}
 		return new Client(); 
 	}
 
