@@ -35,9 +35,9 @@ public class AccountController implements Controller {
 			client_account.setAccountType(account.getAccountType());
 			client_account.setAccountName(account.getAccountName());
 			client_account.setBalance(account.getBalance()); 
-			htmlString.append("<p>Account Type: " + client_account.getAccountType() + "\n"
-					+ "Account Name: " + client_account.getAccountName() + "\n"
-							+ "Account Balance: " + client_account.getBalance() + "</p>");			
+			htmlString.append("<p>Account Type: " + client_account.getAccountType() + "</p>"
+					+ "<p>Account Name: " + client_account.getAccountName() + "</p>"
+							+ "<p>Account Balance: " + client_account.getBalance() + "</p>");			
 		}
 		
 		ctx.html(htmlString.toString());

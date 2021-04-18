@@ -7,7 +7,7 @@ public class Client {
 	private String id; 
 	private String firstName;
 	private String lastName;
-	private ArrayList<Account> accounts; 
+	private ArrayList<Account> accounts = new ArrayList<Account>(); 
 	
 	public Client() {
 		super(); 
@@ -18,13 +18,12 @@ public class Client {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.accounts = accounts;
 	}
 	
 	public Client(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
-		this.lastName = lastName; 
+		this.lastName = lastName;
 	}
 	
 

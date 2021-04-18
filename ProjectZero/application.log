@@ -2689,3 +2689,269 @@ com.revature.exceptions.AccountNotAddedException: Could not add Account to the D
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
 	at java.base/java.lang.Thread.run(Thread.java:832)
+23:07:42.376 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+23:07:42.404 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @638ms to org.eclipse.jetty.util.log.Slf4jLog
+23:07:42.405 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+23:07:42.700 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+23:07:42.700 [main] INFO  io.javalin.Javalin - Javalin started in 296ms \o/
+23:07:45.769 [qtp1412794598-21] INFO  com.revature.application.Application - POST request to endpoint '/clients/1/accounts' recieved.
+23:07:46.064 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+23:07:46.105 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:07:46.106 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:07:46.112 [qtp1412794598-21] WARN  io.javalin.Javalin - Uncaught exception
+com.revature.exceptions.AccountNotAddedException: Could not add Account to the Database.
+	at com.revature.dao.AccountRepository.addAccount(AccountRepository.java:58)
+	at com.revature.service.AccountService.addAccount(AccountService.java:56)
+	at com.revature.controller.AccountController.lambda$0(AccountController.java:26)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:128)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:136)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+23:12:16.555 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+23:12:16.584 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @619ms to org.eclipse.jetty.util.log.Slf4jLog
+23:12:16.585 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+23:12:16.844 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+23:12:16.845 [main] INFO  io.javalin.Javalin - Javalin started in 260ms \o/
+23:12:19.188 [qtp1412794598-17] INFO  com.revature.application.Application - POST request to endpoint '/clients/1/accounts' recieved.
+23:12:19.480 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+23:12:19.545 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:12:19.546 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:12:19.728 [qtp1412794598-17] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.add(Object)" because "this.accounts" is null
+	at com.revature.models.Client.addAccount(Client.java:64)
+	at com.revature.service.AccountService.addAccount(AccountService.java:58)
+	at com.revature.controller.AccountController.lambda$0(AccountController.java:26)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:128)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:136)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+23:17:19.489 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+23:17:19.518 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @662ms to org.eclipse.jetty.util.log.Slf4jLog
+23:17:19.519 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+23:17:19.831 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+23:17:19.832 [main] INFO  io.javalin.Javalin - Javalin started in 314ms \o/
+23:17:21.533 [qtp1412794598-27] INFO  com.revature.application.Application - POST request to endpoint '/clients/1/accounts' recieved.
+23:17:21.821 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+23:17:21.852 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:17:21.856 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+23:17:21.857 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+23:17:21.873 [qtp1412794598-27] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.add(Object)" because "this.accounts" is null
+	at com.revature.models.Client.addAccount(Client.java:64)
+	at com.revature.service.AccountService.addAccount(AccountService.java:58)
+	at com.revature.controller.AccountController.lambda$0(AccountController.java:26)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:128)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:136)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+23:18:36.089 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+23:18:36.118 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @625ms to org.eclipse.jetty.util.log.Slf4jLog
+23:18:36.119 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+23:18:36.417 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+23:18:36.417 [main] INFO  io.javalin.Javalin - Javalin started in 299ms \o/
+23:18:39.363 [qtp1412794598-21] INFO  com.revature.application.Application - POST request to endpoint '/clients/1/accounts' recieved.
+23:18:39.607 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+23:18:39.647 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:18:39.650 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+23:18:39.650 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+23:18:39.659 [qtp1412794598-21] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.add(Object)" because "this.accounts" is null
+	at com.revature.models.Client.addAccount(Client.java:64)
+	at com.revature.service.AccountService.addAccount(AccountService.java:60)
+	at com.revature.controller.AccountController.lambda$0(AccountController.java:26)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:128)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:136)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+23:20:58.139 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+23:20:58.169 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @611ms to org.eclipse.jetty.util.log.Slf4jLog
+23:20:58.170 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+23:20:58.428 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+23:20:58.428 [main] INFO  io.javalin.Javalin - Javalin started in 259ms \o/
+23:21:00.758 [qtp1412794598-20] INFO  com.revature.application.Application - POST request to endpoint '/clients/1/accounts' recieved.
+23:21:00.999 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+23:21:01.071 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:21:01.072 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+23:21:01.072 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+23:21:55.875 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+23:21:55.905 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @610ms to org.eclipse.jetty.util.log.Slf4jLog
+23:21:55.906 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+23:21:56.211 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+23:21:56.211 [main] INFO  io.javalin.Javalin - Javalin started in 306ms \o/
+23:21:58.352 [qtp1412794598-27] INFO  com.revature.application.Application - POST request to endpoint '/clients/1/accounts' recieved.
+23:21:58.605 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+23:21:58.652 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+23:21:58.653 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+23:21:58.654 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);

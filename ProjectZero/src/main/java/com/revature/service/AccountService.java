@@ -43,7 +43,7 @@ public class AccountService {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.accountRepository.setConnection(connection);
-			connection.setAutoCommit(false);
+			connection.setAutoCommit(true);
 			
 			int client_id = Integer.parseInt(clientID); 
 			
@@ -55,7 +55,9 @@ public class AccountService {
 			Client client = new Client(clientID, "Tom", "Cruise"); //for now use this
 			Account account = accountRepository.addAccount(clientID, accountDTO); 
 			
-			client.addAccount(account);			
+			System.out.println(account.toString());
+			
+			client.addAccount(account);	
 			connection.commit();
 			return client;
 			

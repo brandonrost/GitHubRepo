@@ -50,14 +50,14 @@ public class AccountRepository {
 			
 			Statement stmt = connection.createStatement();
 			
-			int accountIDAdded = stmt.executeUpdate(getAccountIDSQL);
-			System.out.println(String.valueOf(accountIDAdded));
+			ResultSet rs = stmt.executeQuery(getAccountIDSQL);
+			logger.info("Executed SQL Statment: " + getAccountIDSQL);
 			
-			if(accountIDAdded != 1) {
+			if(rs.next()==false) {
 				throw new AccountNotAddedException("Could not add Account to the Database."); 
 			}
-
-			ResultSet rs = stmt.getResultSet(); 
+			
+			rs.beforeFirst();
 			int account_id;
 			if (rs.next()) {
 				account_id = rs.getInt(1);
@@ -71,11 +71,7 @@ public class AccountRepository {
 			pstmt2.setInt(1, Integer.valueOf(clientID));
 			pstmt2.setInt(2, account_id);
 			
-			int client_account_added = pstmt.executeUpdate();
-
-			if (client_account_added != 1) {
-				throw new DatabaseException("Couldn't add Account to the Database.");
-			}
+			logger.info("Executed SQL Statment: " + addToClient_AccountSQL);
 			
 			Account account = new Account(String.valueOf(account_id), accountDTO.getAccountType(), accountDTO.getAccountName(), accountDTO.getBalance()); 
 			return account; 
