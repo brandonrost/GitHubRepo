@@ -59,7 +59,9 @@ public class ClientService {
 			this.clientRepository.setConnection(connection);
 			
 			int id = Integer.parseInt(stringID);
+			
 			Client client = clientRepository.getClientById(id);
+			
 			if (client == null) {
 				throw new ClientNotFoundException("Client with [id] of " + id + "not found.");
 			}

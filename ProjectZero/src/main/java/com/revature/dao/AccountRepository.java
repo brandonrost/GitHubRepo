@@ -71,14 +71,17 @@ public class AccountRepository {
 			pstmt2.setInt(1, Integer.valueOf(clientID));
 			pstmt2.setInt(2, account_id);
 			
+			int addToClient_AccountSQL_rs = pstmt2.executeUpdate(); 
+			if(addToClient_AccountSQL_rs != 1) {
+				throw new DatabaseException("Account failed to attach to client Object.");
+			}
 			logger.info("Executed SQL Statment: " + addToClient_AccountSQL);
 			
 			Account account = new Account(String.valueOf(account_id), accountDTO.getAccountType(), accountDTO.getAccountName(), accountDTO.getBalance()); 
 			return account; 
 
 		} catch (SQLException e) {
-			throw new DatabaseException(
-					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
+			throw new DatabaseException("Something went wrong with the database. " + "Exception message: " + e.getMessage());
 		}
 	}
 

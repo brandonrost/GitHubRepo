@@ -28,10 +28,28 @@ public class ClientRepository {
 	}
 
 	public Client getClientById(int id) {
-		if (id == 1) {
-			return new Client("1", "Tom", "Hanks");
-		} else
-			return null;
+		
+//		try {
+//			String sql = "INSERT INTO client (client_first_name, client_last_name) VALUES (?,?)";
+//
+//			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+//			pstmt.setString(1, clientDTO.getFirstName());
+//			pstmt.setString(2, clientDTO.getLastName());
+//
+//			int recordsAdded = pstmt.executeUpdate();
+//
+//			if (recordsAdded != 1) {
+//				throw new DatabaseException("Couldn't add Client to the Database.");
+//			}
+//
+//			ResultSet rs = pstmt.getGeneratedKeys();
+//			
+//			
+//		} catch (SQLException e) {
+//			throw new DatabaseException(
+//					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
+//		}
+		return new Client(); 
 	}
 
 	public ArrayList<Client> getClients() throws DatabaseException {
