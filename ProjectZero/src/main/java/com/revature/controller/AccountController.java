@@ -46,21 +46,41 @@ public class AccountController implements Controller {
 
 		String greaterAmount = "";
 		String lesserAmount = "";
+		
+		StringBuilder html = new StringBuilder(); 
+		html.append("<h1>Get Accounts By Balance</h1>");
 
-		if (ctx.queryParam("amountLessThan") != null)
+		if (ctx.queryParam("amountLessThan") != null){			
 			greaterAmount = ctx.queryParam("amountLessThan");
-		if (ctx.queryParam("amountGreaterThan") != null)
-			lesserAmount = ctx.queryParam("amountGreaterThan");
-
+			System.out.println("Greater Amount = " + greaterAmount);
+			html.append("<p><h2>SHOWING ACCOUNTS THAT ARE LESS THAN " + ctx.queryParam("amountLessThan"));			
+		}
+		if (ctx.queryParam("amountGreaterThan") != null) {
+			lesserAmount = ctx.queryParam("amountGreaterThan"); 
+			System.out.println("Lesser Amount = " +lesserAmount);
+			if(ctx.queryParam("amountLessThan") == null) {
+				html.append("<p><h2>SHOWING ACCOUNTS THAT ARE GREATER THAN " + ctx.queryParam("amountGreaterThan")+"</h2></p>"); 
+			}else {
+				html.append(" AND GREATER THAN " + ctx.queryParam("amountGreaterThan") + "</h2></p>"); 
+			}
+		}
 		if (greaterAmount == "" && lesserAmount == "") {
 			Client client = accountService.getAccounts(clientID);			 
 			ctx.json(client.getAccounts());
-			ctx.status(200);			
-		} else {
-
-			ArrayList<Account> accounts = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount);
-
-			ctx.json(accounts);
+			ctx.status(200);	
+			
+		} else {			
+			Client client = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount);
+			ArrayList<Account> client_accounts = client.getAccounts(); 
+			html.append("<h3>Client Name: " + client.getFirstName() + " " + client.getLastName() + "</h3>"); 
+			for(Account account:client_accounts) {
+				html.append("<p>Account ID: " + account.getAccountId() + "</p>"); 
+				html.append("<p>Account Type: " + account.getAccountType() + "</p>"); 
+				html.append("<p>Account Name: " + account.getAccountName() +"</p>");
+				html.append("<p>Account Balance: " + account.getBalance() + "</p>"); 
+				html.append("<hr>"); 
+			}		
+			ctx.html(html.toString()); 
 			ctx.status(200);
 		}
 	};

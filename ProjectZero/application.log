@@ -5975,3 +5975,723 @@ com.revature.exceptions.AccountTypeMismatchException: Account Type must be of ty
 03:33:29.567 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: SELECT * FROM account WHERE account.id = ?;
 03:33:29.606 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: DELETE FROM account WHERE account.id = ?;
 03:33:29.606 [qtp1412794598-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+03:33:53.048 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+03:33:53.079 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @622ms to org.eclipse.jetty.util.log.Slf4jLog
+03:33:53.080 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+03:33:53.411 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+03:33:53.411 [main] INFO  io.javalin.Javalin - Javalin started in 332ms \o/
+03:33:55.399 [qtp1412794598-17] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/10/accounts/17' recieved.
+03:33:55.400 [qtp1412794598-17] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+03:33:55.456 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+03:33:55.476 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+03:33:55.478 [qtp1412794598-17] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Account with ID of '17' does not belong to Client with ID of '10'.
+03:34:23.348 [qtp1412794598-16] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/12/accounts/18' recieved.
+03:34:23.348 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+03:34:23.350 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+03:34:23.351 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+03:34:23.352 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Accessing the database through the class com.revature.dao.AccountRepository
+03:34:23.353 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: SELECT * FROM account WHERE account.id = ?;
+03:34:23.397 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: DELETE FROM account WHERE account.id = ?;
+03:34:23.398 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+03:35:08.047 [qtp1412794598-15] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/2/accounts/14' recieved.
+03:35:08.048 [qtp1412794598-15] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+03:35:08.051 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+03:35:08.052 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+03:35:08.052 [qtp1412794598-15] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Account with ID of '14' does not belong to Client with ID of '2'.
+03:39:35.285 [qtp1412794598-22] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts/9' recieved.
+03:39:35.286 [qtp1412794598-22] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+03:39:35.289 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+03:39:35.289 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+03:39:35.289 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+03:39:35.290 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT a.id AS AccountID, a.account_type AS AccountType, a.account_type AS AccountName, a.account_balance AS Balance FROM account AS a LEFT JOIN client_account AS ca ON a.id = ca.account_id LEFT JOIN client AS c ON c.id = ca.client_id WHERE c.id = ? AND a.id = ?;
+03:39:35.290 [qtp1412794598-22] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+03:40:48.398 [qtp1412794598-28] INFO  com.revature.application.Application - GET request to endpoint '/clients/4/accounts/9' recieved.
+03:40:48.398 [qtp1412794598-28] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+03:40:48.401 [qtp1412794598-28] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+03:40:48.402 [qtp1412794598-28] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+03:40:48.402 [qtp1412794598-28] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+03:40:48.403 [qtp1412794598-28] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT a.id AS AccountID, a.account_type AS AccountType, a.account_type AS AccountName, a.account_balance AS Balance FROM account AS a LEFT JOIN client_account AS ca ON a.id = ca.account_id LEFT JOIN client AS c ON c.id = ca.client_id WHERE c.id = ? AND a.id = ?;
+03:40:48.403 [qtp1412794598-28] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:46:53.442 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+04:46:53.496 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @692ms to org.eclipse.jetty.util.log.Slf4jLog
+04:46:53.498 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+04:46:53.836 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+04:46:53.836 [main] INFO  io.javalin.Javalin - Javalin started in 339ms \o/
+04:47:45.034 [qtp1412794598-17] INFO  com.revature.application.Application - POST request to endpoint '/clients/16/accounts' recieved.
+04:47:45.232 [qtp1412794598-17] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:47:45.294 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:47:45.308 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:47:45.309 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:47:45.359 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+04:47:45.360 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+04:47:45.387 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+04:47:45.387 [qtp1412794598-17] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:47:57.434 [qtp1412794598-16] INFO  com.revature.application.Application - POST request to endpoint '/clients/16/accounts' recieved.
+04:47:57.435 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:47:57.437 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:47:57.437 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:47:57.437 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:47:57.460 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+04:47:57.461 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+04:47:57.493 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+04:47:57.493 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:48:20.657 [qtp1412794598-22] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountLessThan=1000&amountGreaterThan=500'.
+04:48:20.658 [qtp1412794598-22] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:48:20.661 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:48:20.661 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:48:20.661 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:48:20.758 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+04:48:20.759 [qtp1412794598-22] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:48:45.053 [qtp1412794598-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountLessThan=1000'.
+04:48:45.053 [qtp1412794598-21] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:48:45.057 [qtp1412794598-21] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: 'Greater than' and 'less than' parameters need to be of type 'int'. User provided 'greater than' = '1000', 'less than' = ''.
+04:54:03.187 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+04:54:03.217 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @663ms to org.eclipse.jetty.util.log.Slf4jLog
+04:54:03.218 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+04:54:03.564 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+04:54:03.564 [main] INFO  io.javalin.Javalin - Javalin started in 347ms \o/
+04:54:06.518 [qtp1412794598-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountLessThan=1000'.
+04:54:06.519 [qtp1412794598-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:54:06.578 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:54:06.625 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:54:06.627 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:54:06.628 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+04:54:06.628 [qtp1412794598-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:54:16.520 [qtp1412794598-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+04:54:16.521 [qtp1412794598-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:54:16.526 [qtp1412794598-20] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: 'Less Than' amount needs to be greater than the 'Greater Than' amount. 0is not > (greater than) 500.
+04:57:21.647 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+04:57:21.678 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @635ms to org.eclipse.jetty.util.log.Slf4jLog
+04:57:21.679 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+04:57:22.018 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+04:57:22.019 [main] INFO  io.javalin.Javalin - Javalin started in 340ms \o/
+04:57:24.910 [qtp1412794598-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+04:57:24.911 [qtp1412794598-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:57:25.002 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:57:25.023 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:57:25.024 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:57:25.024 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+04:57:25.024 [qtp1412794598-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:57:30.849 [qtp1412794598-17] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+04:57:30.850 [qtp1412794598-17] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:57:30.852 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:57:30.853 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:57:30.853 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:57:30.854 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+04:57:30.854 [qtp1412794598-17] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:58:42.545 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+04:58:42.577 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @692ms to org.eclipse.jetty.util.log.Slf4jLog
+04:58:42.579 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+04:58:42.905 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+04:58:42.905 [main] INFO  io.javalin.Javalin - Javalin started in 327ms \o/
+04:58:45.962 [qtp1412794598-19] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+04:58:45.963 [qtp1412794598-19] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:58:46.055 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:58:46.075 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:58:46.077 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:58:46.077 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+04:58:46.077 [qtp1412794598-19] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+04:58:54.532 [qtp1412794598-18] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+04:58:54.533 [qtp1412794598-18] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+04:58:54.535 [qtp1412794598-18] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+04:58:54.536 [qtp1412794598-18] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+04:58:54.536 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+04:58:54.537 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+04:58:54.537 [qtp1412794598-18] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:01:05.962 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:01:05.991 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @664ms to org.eclipse.jetty.util.log.Slf4jLog
+05:01:05.993 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:01:06.285 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:01:06.285 [main] INFO  io.javalin.Javalin - Javalin started in 293ms \o/
+05:01:08.170 [qtp1412794598-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:01:08.171 [qtp1412794598-21] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:01:08.233 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:01:08.256 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:01:08.257 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:01:08.258 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:01:08.258 [qtp1412794598-21] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:04:21.344 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:04:21.423 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @717ms to org.eclipse.jetty.util.log.Slf4jLog
+05:04:21.424 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:04:21.764 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:04:21.764 [main] INFO  io.javalin.Javalin - Javalin started in 341ms \o/
+05:04:24.654 [qtp1412794598-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:04:24.666 [qtp1412794598-27] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "io.javalin.http.Context.queryParam(String)" is null
+	at com.revature.controller.AccountController.lambda$1(AccountController.java:53)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:128)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:136)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+05:08:01.415 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:08:01.484 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @787ms to org.eclipse.jetty.util.log.Slf4jLog
+05:08:01.486 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:08:01.798 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:08:01.798 [main] INFO  io.javalin.Javalin - Javalin started in 313ms \o/
+05:08:03.763 [qtp1412794598-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:08:03.766 [qtp1412794598-21] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: Cannot invoke "String.isEmpty()" because the return value of "io.javalin.http.Context.queryParam(String)" is null
+	at com.revature.controller.AccountController.lambda$1(AccountController.java:53)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:128)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:136)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+05:11:24.607 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:11:24.640 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @688ms to org.eclipse.jetty.util.log.Slf4jLog
+05:11:24.641 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:11:24.936 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:11:24.936 [main] INFO  io.javalin.Javalin - Javalin started in 295ms \o/
+05:11:26.758 [qtp1412794598-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:11:26.761 [qtp1412794598-20] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "io.javalin.http.Context.queryParam(String)" is null
+	at com.revature.controller.AccountController.lambda$1(AccountController.java:53)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:128)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:136)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+05:13:06.109 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:13:06.137 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @686ms to org.eclipse.jetty.util.log.Slf4jLog
+05:13:06.139 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:13:06.478 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:13:06.478 [main] INFO  io.javalin.Javalin - Javalin started in 340ms \o/
+05:13:08.700 [qtp1412794598-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:13:08.701 [qtp1412794598-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:13:08.762 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:13:08.811 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:13:08.813 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:13:08.814 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:13:08.814 [qtp1412794598-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:13:20.269 [qtp1412794598-16] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountLessThan=1000&amountGreaterThan=500'.
+05:13:20.271 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:13:20.280 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:13:20.283 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:13:20.284 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:13:20.287 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:13:20.288 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:13:29.303 [qtp1412794598-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:13:29.304 [qtp1412794598-21] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:13:29.306 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:13:29.307 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:13:29.307 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:13:29.308 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:13:29.308 [qtp1412794598-21] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:13:33.211 [qtp1412794598-22] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountLessThan=1000'.
+05:13:33.212 [qtp1412794598-22] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:13:33.215 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:13:33.216 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:13:33.216 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:13:33.217 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:13:33.217 [qtp1412794598-22] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:14:30.519 [qtp1412794598-15] INFO  com.revature.application.Application - POST request to endpoint '/clients/5/accounts' recieved.
+05:14:30.791 [qtp1412794598-15] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:14:30.794 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:14:30.794 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:14:30.795 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:14:30.861 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+05:14:30.861 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+05:14:31.274 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+05:14:31.275 [qtp1412794598-15] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:14:41.204 [qtp1412794598-16] INFO  com.revature.application.Application - POST request to endpoint '/clients/5/accounts' recieved.
+05:14:41.204 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:14:41.207 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:14:41.208 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:14:41.208 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:14:41.571 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+05:14:41.573 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+05:14:41.711 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+05:14:41.712 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:14:45.978 [qtp1412794598-19] INFO  com.revature.application.Application - POST request to endpoint '/clients/5/accounts' recieved.
+05:14:45.979 [qtp1412794598-19] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:14:45.981 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:14:45.982 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:14:45.982 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:14:46.022 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+05:14:46.025 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+05:14:46.043 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+05:14:46.043 [qtp1412794598-19] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:14:50.613 [qtp1412794598-16] INFO  com.revature.application.Application - POST request to endpoint '/clients/5/accounts' recieved.
+05:14:50.613 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:14:50.617 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:14:50.617 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:14:50.618 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:14:50.668 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+05:14:50.669 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+05:14:50.706 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+05:14:50.706 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:14:55.323 [qtp1412794598-19] INFO  com.revature.application.Application - POST request to endpoint '/clients/5/accounts' recieved.
+05:14:55.324 [qtp1412794598-19] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:14:55.326 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:14:55.327 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:14:55.328 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:14:55.379 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+05:14:55.380 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+05:14:55.422 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+05:14:55.423 [qtp1412794598-19] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:15:02.237 [qtp1412794598-16] INFO  com.revature.application.Application - POST request to endpoint '/clients/5/accounts' recieved.
+05:15:02.238 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:15:02.242 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:15:02.244 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:15:02.244 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:15:02.284 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+05:15:02.285 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+05:15:02.371 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+05:15:02.372 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:15:10.288 [qtp1412794598-19] INFO  com.revature.application.Application - GET request to endpoint '/clients/16/accounts' recieved with QueryParameterString of 'amountLessThan=1000&amountGreaterThan=500'.
+05:15:10.289 [qtp1412794598-19] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:15:10.291 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:15:10.292 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:15:10.292 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:15:10.293 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:15:10.293 [qtp1412794598-19] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:15:27.872 [qtp1412794598-16] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=1000&amountGreaterThan=500'.
+05:15:27.874 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:15:27.878 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:15:27.879 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:15:27.879 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:15:27.880 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:15:27.880 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:17:46.127 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:17:46.208 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @682ms to org.eclipse.jetty.util.log.Slf4jLog
+05:17:46.209 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:17:46.540 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:17:46.540 [main] INFO  io.javalin.Javalin - Javalin started in 332ms \o/
+05:17:49.009 [qtp1412794598-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=1000&amountGreaterThan=500'.
+05:17:49.010 [qtp1412794598-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:17:49.067 [qtp1412794598-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:17:49.116 [qtp1412794598-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:17:49.118 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:17:49.118 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:17:49.119 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:17:49.119 [qtp1412794598-20] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:17:55.974 [qtp1412794598-22] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=1000'.
+05:17:55.975 [qtp1412794598-22] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:17:55.977 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:17:55.978 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:17:55.978 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:17:55.979 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:17:55.980 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:17:55.981 [qtp1412794598-22] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:18:13.102 [qtp1412794598-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=400'.
+05:18:13.103 [qtp1412794598-21] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:18:13.106 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:18:13.107 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:18:13.107 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:18:13.107 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:18:13.108 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:18:13.108 [qtp1412794598-21] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:18:18.922 [qtp1412794598-17] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=200'.
+05:18:18.923 [qtp1412794598-17] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:18:18.925 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:18:18.926 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:18:18.926 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:18:18.927 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:18:18.927 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:18:18.927 [qtp1412794598-17] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:19:32.503 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:19:32.531 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @737ms to org.eclipse.jetty.util.log.Slf4jLog
+05:19:32.532 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:19:32.860 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:19:32.861 [main] INFO  io.javalin.Javalin - Javalin started in 330ms \o/
+05:19:35.627 [qtp1412794598-19] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=200'.
+05:19:35.628 [qtp1412794598-19] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:19:35.689 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:19:35.712 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:19:35.714 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:19:35.714 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:19:35.714 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:19:35.714 [qtp1412794598-19] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:21:25.589 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:21:25.618 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @677ms to org.eclipse.jetty.util.log.Slf4jLog
+05:21:25.619 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:21:25.934 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:21:25.935 [main] INFO  io.javalin.Javalin - Javalin started in 317ms \o/
+05:21:28.638 [qtp1412794598-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=200'.
+05:21:28.643 [qtp1412794598-21] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:21:28.724 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:21:28.747 [qtp1412794598-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:21:28.748 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:21:28.749 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:21:28.749 [qtp1412794598-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:21:28.749 [qtp1412794598-21] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:21:59.849 [qtp1412794598-16] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500&amountLessThan=2000'.
+05:21:59.850 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:21:59.854 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:21:59.854 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:21:59.855 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:21:59.855 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:21:59.855 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:21:59.855 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:22:12.063 [qtp1412794598-17] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=2000'.
+05:22:12.064 [qtp1412794598-17] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:22:12.066 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:22:12.067 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:22:12.067 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:22:12.067 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:22:12.067 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:22:12.067 [qtp1412794598-17] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:23:44.945 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:23:44.977 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @693ms to org.eclipse.jetty.util.log.Slf4jLog
+05:23:44.978 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:23:45.320 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:23:45.320 [main] INFO  io.javalin.Javalin - Javalin started in 343ms \o/
+05:23:49.817 [qtp1412794598-17] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500&amountLessThan=2000'.
+05:23:49.819 [qtp1412794598-17] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:23:49.890 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:23:49.910 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:23:49.911 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:23:49.912 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:23:49.913 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:23:49.913 [qtp1412794598-17] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:23:55.261 [qtp1412794598-18] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=2000'.
+05:23:55.261 [qtp1412794598-18] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:23:55.264 [qtp1412794598-18] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:23:55.264 [qtp1412794598-18] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:23:55.265 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:23:55.265 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with less than parameters filled in.
+05:23:55.265 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:23:55.266 [qtp1412794598-18] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:25:20.829 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:25:20.960 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @772ms to org.eclipse.jetty.util.log.Slf4jLog
+05:25:20.968 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:25:21.351 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:25:21.351 [main] INFO  io.javalin.Javalin - Javalin started in 386ms \o/
+05:25:26.035 [qtp1412794598-16] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500&amountLessThan=2000'.
+05:25:26.036 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:25:26.095 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:25:26.116 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:25:26.117 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:25:26.117 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:25:26.118 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:25:26.119 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:25:33.094 [qtp1412794598-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:25:33.094 [qtp1412794598-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:25:33.097 [qtp1412794598-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:25:33.098 [qtp1412794598-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:25:33.098 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:25:33.098 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:25:33.098 [qtp1412794598-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:25:33.099 [qtp1412794598-20] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:26:00.389 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:26:00.420 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @672ms to org.eclipse.jetty.util.log.Slf4jLog
+05:26:00.421 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:26:00.763 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:26:00.764 [main] INFO  io.javalin.Javalin - Javalin started in 344ms \o/
+05:26:04.274 [qtp1412794598-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500&amountLessThan=2000'.
+05:26:04.274 [qtp1412794598-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:26:04.335 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:26:04.383 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:26:04.385 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:26:04.386 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:26:04.386 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:26:04.387 [qtp1412794598-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:26:11.213 [qtp1412794598-16] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=2000'.
+05:26:11.214 [qtp1412794598-16] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:26:11.217 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:26:11.219 [qtp1412794598-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:26:11.219 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:26:11.219 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with less than parameters filled in.
+05:26:11.220 [qtp1412794598-16] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:26:11.221 [qtp1412794598-16] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:27:16.056 [qtp1412794598-15] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:27:16.057 [qtp1412794598-15] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:27:16.060 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:27:16.061 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:27:16.061 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:27:16.061 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:27:16.062 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:27:16.062 [qtp1412794598-15] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:29:41.836 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:29:41.866 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @674ms to org.eclipse.jetty.util.log.Slf4jLog
+05:29:41.867 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:29:42.155 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:29:42.155 [main] INFO  io.javalin.Javalin - Javalin started in 289ms \o/
+05:29:45.932 [qtp1412794598-17] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500&amountLessThan=2000'.
+05:29:45.932 [qtp1412794598-17] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:29:45.995 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:29:46.046 [qtp1412794598-17] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:29:46.048 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:29:46.049 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:29:46.050 [qtp1412794598-17] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:29:46.050 [qtp1412794598-17] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:29:55.314 [qtp1412794598-18] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:29:55.314 [qtp1412794598-18] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:29:55.317 [qtp1412794598-18] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:29:55.317 [qtp1412794598-18] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:29:55.319 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:29:55.319 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:29:55.319 [qtp1412794598-18] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:29:55.319 [qtp1412794598-18] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:33:01.480 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+05:33:01.511 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @742ms to org.eclipse.jetty.util.log.Slf4jLog
+05:33:01.512 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+05:33:01.833 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+05:33:01.833 [main] INFO  io.javalin.Javalin - Javalin started in 322ms \o/
+05:33:06.023 [qtp1412794598-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500&amountLessThan=2000'.
+05:33:06.024 [qtp1412794598-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:33:06.086 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:33:06.108 [qtp1412794598-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:33:06.109 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:33:06.109 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+05:33:06.110 [qtp1412794598-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:33:06.110 [qtp1412794598-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:33:11.405 [qtp1412794598-19] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:33:11.406 [qtp1412794598-19] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:33:11.410 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:33:11.411 [qtp1412794598-19] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:33:11.411 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:33:11.412 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:33:11.413 [qtp1412794598-19] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:33:11.413 [qtp1412794598-19] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:33:52.889 [qtp1412794598-15] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=2000'.
+05:33:52.889 [qtp1412794598-15] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:33:52.893 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:33:52.893 [qtp1412794598-15] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:33:52.893 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:33:52.894 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with less than parameters filled in.
+05:33:52.894 [qtp1412794598-15] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:33:52.895 [qtp1412794598-15] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+05:35:16.822 [qtp1412794598-22] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=500'.
+05:35:16.823 [qtp1412794598-22] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+05:35:16.826 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+05:35:16.827 [qtp1412794598-22] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+05:35:16.828 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+05:35:16.828 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+05:35:16.829 [qtp1412794598-22] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+05:35:16.829 [qtp1412794598-22] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService

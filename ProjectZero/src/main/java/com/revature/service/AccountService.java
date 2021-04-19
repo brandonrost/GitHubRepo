@@ -13,6 +13,7 @@ import com.revature.dto.PostAccountDTO;
 import com.revature.models.Account;
 import com.revature.models.Client;
 import com.revature.util.ConnectionUtil;
+import com.revature.exceptions.AccountDoesNotBelongToClientException;
 import com.revature.exceptions.AccountNotAddedException;
 import com.revature.exceptions.AccountTypeMismatchException;
 import com.revature.exceptions.BadParameterException;
@@ -95,12 +96,51 @@ public class AccountService {
 		}
 	}
 
-	public ArrayList<Account> getAccountByBalance(String clientID, String greaterAmount, String lesserAmount) {
-		// TODO Auto-generated method stub
-		return accountRepository.getAccountByBalance(clientID, greaterAmount, lesserAmount);
+	public Client getAccountByBalance(String clientID, String greaterAmount, String lesserAmount) throws DatabaseException, BadParameterException, NoAccountsFoundException {
+		logger.info("Curently performing business logic inside the " + this.getClass());
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.accountRepository.setConnection(connection);
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int client_id = Integer.parseInt(clientID); 
+			
+			if(greaterAmount != "" && lesserAmount != "") {
+				if(Integer.valueOf(greaterAmount) < Integer.valueOf(lesserAmount)) {
+					throw new BadParameterException("'Less Than' amount needs to be greater than the 'Greater Than' amount. " + greaterAmount + "is not > (greater than) " + lesserAmount + "."); 
+				}
+			}else {
+				if(greaterAmount == "")greaterAmount = "0"; 
+				if(lesserAmount == "")lesserAmount = "0"; 							
+			}
+		
+			try {
+				int greaterAmountint = Integer.parseInt(greaterAmount); 
+				int lesserAmountint = Integer.parseInt(lesserAmount); 
+			}catch (NumberFormatException e) {
+				throw new BadParameterException("'Greater than' and 'less than' parameters need to be of type 'int'. User provided 'greater than' = '" 
+												+ greaterAmount + "', 'less than' = '"+lesserAmount +"'."); 
+			}
+			
+			Client client = clientRepository.getClientById(client_id); 						
+			ArrayList<Account> client_accounts = accountRepository.getAccountByBalance(clientID, greaterAmount, lesserAmount); 
+			connection.commit();
+			logger.info("SQL Query Success! Now back inside the " + this.getClass());
+			
+			client.setAccounts(new ArrayList<Account>());
+			client.setAccounts(client_accounts);
+			
+			return client; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client id must be of type 'int'. User provided '" + clientID +"'."); 
+		}
 	}
 
-	public Client getAccount(String clientID, String accountID) throws DatabaseException, BadParameterException, NoAccountsFoundException {
+	public Client getAccount(String clientID, String accountID) throws DatabaseException, BadParameterException, NoAccountsFoundException, AccountDoesNotBelongToClientException {
 		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -111,16 +151,24 @@ public class AccountService {
 			int client_id = Integer.parseInt(clientID);
 			int account_id = Integer.parseInt(accountID); 
 			
-			Client client = clientRepository.getClientById(client_id); 	
-			client.setAccounts(new ArrayList<Account>());
-			Account client_account = accountRepository.getAccount(clientID , accountID); 
-			connection.commit();
+			Client client = clientRepository.getClientById(client_id);  
+			ArrayList<Account> client_accounts = client.getAccounts(); 
+			boolean ownsAccount = false; 
 			
-			logger.info("SQL Query Success! Now back inside the " + this.getClass());
-			
-			client.addAccount(client_account);
-			
-			Account insertedAccount = client.getAccounts().get(0); 
+			for(Account account:client_accounts) {
+				if(account.getAccountId().equals(accountID) && ownsAccount == false) {
+					ownsAccount = true;
+				}
+			}			
+			if(ownsAccount == true) {
+				Account client_account = accountRepository.getAccount(clientID , accountID); 			
+				connection.commit();				
+				client.setAccounts(new ArrayList<Account>());				
+				client.addAccount(client_account);
+				logger.info("SQL Query Success! Now back inside the " + this.getClass());
+			}else {
+				throw new NoAccountsFoundException(); 
+			}
 			
 			return client; 
 			
@@ -128,12 +176,12 @@ public class AccountService {
 			throw new DatabaseException("Could not connect to the database. Exception Message: " + e.getMessage()); 
 		} catch (NumberFormatException e2) {
 			throw new BadParameterException("Client id must be of type 'int'. User provided '" + clientID +"'."); 
-		} catch (IndexOutOfBoundsException e3) {
-			throw new NoAccountsFoundException("Could not find account associated with client with ID of '" + clientID +"'."); 
-		}
+		} catch (NoAccountsFoundException e3) {
+			throw new AccountDoesNotBelongToClientException("Account with ID of '"+ accountID + "' does not belong to Client with ID of '" + clientID +"'."); 
+		} 
 	}
 
-	public Client updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) throws DatabaseException, BadParameterException, AccountTypeMismatchException {
+	public Client updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) throws DatabaseException, BadParameterException, AccountTypeMismatchException, AccountDoesNotBelongToClientException {
 		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -180,7 +228,7 @@ public class AccountService {
 		} catch (BadParameterException e3) {
 			throw new AccountTypeMismatchException("Account Type must be of type 'Checking' or 'Savings'. User entered " + accountToBeUpdated.getAccountType()); 
 		} catch (NoAccountsFoundException e4) {
-			throw new BadParameterException("Account with ID of '"+ accountID +"' does not belong to Client with ID of '"+ clientID + "'."); 
+			throw new AccountDoesNotBelongToClientException("Account with ID of '"+ accountID +"' does not belong to Client with ID of '"+ clientID + "'."); 
 		}
 	}
 
