@@ -2,6 +2,9 @@ package com.revature.controller;
 
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.revature.dto.AddClientToAccountDTO;
 import com.revature.dto.PostAccountDTO;
 import com.revature.models.Account;
@@ -14,6 +17,7 @@ import io.javalin.http.Handler;
 public class AccountController implements Controller {
 
 	private AccountService accountService;
+	private Logger logger = LoggerFactory.getLogger(AccountController.class); 
 
 	public AccountController() {
 		this.accountService = new AccountService();
@@ -21,25 +25,23 @@ public class AccountController implements Controller {
 
 	private Handler addAccount = ctx -> {
 		String clientID = ctx.pathParam("clientid");
-
+		
 		PostAccountDTO accountDTO = ctx.bodyAsClass(PostAccountDTO.class);
 
 		Client client = this.accountService.addAccount(clientID, accountDTO);
-
-		if (client == null)
-			ctx.status(400);
-
 		StringBuilder htmlString = new StringBuilder();
 		htmlString.append("<h1>Added Account</h1>\n");
-		htmlString.append("<p><h3>ClientName: " + client.getFirstName() + " " + client.getLastName() + "</h3></p>\n");
+		htmlString.append("<h3>Added Following Account To The Account Table:</h3>");
+		htmlString.append("<hr><p><h3>ClientName: " + client.getFirstName() + " " + client.getLastName() + "</h3>");
 		
 		Account client_account = client.getAccounts().get(client.getAccounts().size()-1); 
-		htmlString.append("<p>Account Type: " + client_account.getAccountType() + "</p>" + "<p>Account Name: "
-				+ client_account.getAccountName() + "</p>" + "<p>Account Balance: " + client_account.getBalance()
-				+ "</p>");
-
+		htmlString.append("<b>Account ID:</b> " + client_account.getAccountId() + "<br>"
+						+ "<b>Account Type:</b> " + client_account.getAccountType() + "<br>"
+						+ "<b>Account Name:</b> " + client_account.getAccountName() + "<br>"
+						+ "<b>Account Balance:</b> " + client_account.getBalance()+ "</p>");
 		ctx.html(htmlString.toString());
 		ctx.status(201);
+		logger.info("Endpoint to " + ctx.contextPath() + " mapped successfully!");
 	};
 
 	private Handler getAccounts = ctx -> {
@@ -68,7 +70,8 @@ public class AccountController implements Controller {
 		if (greaterAmount == "" && lesserAmount == "") {
 			Client client = accountService.getAccounts(clientID);			 
 			ctx.json(client.getAccounts());
-			ctx.status(200);	
+			ctx.status(200);
+			logger.info("Endpoint to " + ctx.contextPath() + " mapped successfully!");
 			
 		} else {			
 			Client client = accountService.getAccountByBalance(clientID, greaterAmount, lesserAmount);
@@ -83,6 +86,7 @@ public class AccountController implements Controller {
 			}		
 			ctx.html(html.toString()); 
 			ctx.status(200);
+			logger.info("Endpoint to " + ctx.contextPath() + " mapped successfully!");
 		}
 	};
 

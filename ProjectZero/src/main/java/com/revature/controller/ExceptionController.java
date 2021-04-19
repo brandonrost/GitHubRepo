@@ -3,7 +3,9 @@ package com.revature.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.revature.exceptions.AccountBalanceNegativeException;
 import com.revature.exceptions.AccountDoesNotBelongToClientException;
+import com.revature.exceptions.AccountNameNullException;
 import com.revature.exceptions.AccountNotAddedException;
 import com.revature.exceptions.AccountNotDeletedException;
 import com.revature.exceptions.AccountTypeMismatchException;
@@ -11,6 +13,7 @@ import com.revature.exceptions.BadParameterException;
 import com.revature.exceptions.ClientListNullException;
 import com.revature.exceptions.ClientNotAddedException;
 import com.revature.exceptions.ClientNotAddedToAccountException;
+import com.revature.exceptions.ClientNotDeletedException;
 import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.exceptions.EmptyAccountTypeException;
@@ -88,6 +91,21 @@ public class ExceptionController implements Controller {
 		ctx.status(400);
 	};
 
+	private ExceptionHandler<ClientNotDeletedException> clientNotDeletedExceptionHandler = (e, ctx)->{
+		logger.warn("Client could not be deleted from the Database properly. Exception Message: " + e.getMessage());
+		ctx.status(400);
+	};
+	
+	private ExceptionHandler<AccountNameNullException> accountNameNullExceptionHandler = (e, ctx)->{
+		logger.warn("Client Name can not be left blank. Exception Message: " + e.getMessage());
+		ctx.status(400);
+	};
+	
+	private ExceptionHandler<AccountBalanceNegativeException> accountBalanceNegativeExceptionHandler = (e, ctx)->{
+		logger.warn("Account Balance is either Negative or Null. Exception Message: " + e.getMessage());
+		ctx.status(400);
+	};
+	
 	@Override
 	public void mapEndpoints(Javalin app) {
 		app.exception(BadParameterException.class, badParameterExceptionHandler);
@@ -103,6 +121,9 @@ public class ExceptionController implements Controller {
 		app.exception(EmptyAccountTypeException.class, emptyAccountTypeExceptionHandler);
 		app.exception(EmptyClientNameException.class, emptyClientNameExceptionHandler);
 		app.exception(NoAccountsFoundException.class, noAccountsFoundExceptionHandler);
+		app.exception(ClientNotDeletedException.class, clientNotDeletedExceptionHandler);
+		app.exception(AccountNameNullException.class, accountNameNullExceptionHandler);
+		app.exception(AccountBalanceNegativeException.class, accountBalanceNegativeExceptionHandler); 
 	}
 
 }

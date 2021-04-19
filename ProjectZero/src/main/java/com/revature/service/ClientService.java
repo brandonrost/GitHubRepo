@@ -13,6 +13,7 @@ import com.revature.dto.PutClientDTO;
 import com.revature.exceptions.BadParameterException;
 import com.revature.exceptions.ClientListNullException;
 import com.revature.exceptions.ClientNotAddedException;
+import com.revature.exceptions.ClientNotDeletedException;
 import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.exceptions.EmptyClientNameException;
@@ -34,7 +35,9 @@ public class ClientService {
 	}
 
 	public ArrayList<Client> getClients() throws ClientListNullException, DatabaseException {
+		logger.info("Performing business logic now inside of the " + this.getClass());
 		ArrayList<Client> clientArray = clientRepository.getClients();
+		logger.info("SQL Query Success! Now back inside Service layer performing business logic.");
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
@@ -45,16 +48,13 @@ public class ClientService {
 			
 		}catch(SQLException e1) {
 			throw new DatabaseException("Could not connect with the database." + e1.getMessage()); 
-		}catch(ClientListNullException e2) {
-			throw new ClientListNullException("\"There are no Clients in the 'Client Table' at this moment."); 
-		}
-		
-		
+		}	
 		
 		return clientArray;
 	}
 
 	public Client getClientById(String stringID) throws BadParameterException, ClientNotFoundException, DatabaseException {
+		logger.info("Performing business logic now inside of the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
@@ -63,23 +63,20 @@ public class ClientService {
 			int id = Integer.parseInt(stringID);
 			
 			Client client = clientRepository.getClientById(id);
+			logger.info("SQL Query Success! Now back inside Service layer performing business logic.");
 			
-			if (client == null) {
-				throw new ClientNotFoundException("Client with [id] of " + id + "not found.");
-			}
 			return client;
 
-		} catch (NumberFormatException e1) {
-			throw new BadParameterException("Client ID must be of type (int). User provided '" + stringID + "'.");
-		} catch (ClientNotFoundException e2) {
-			throw new ClientNotFoundException("Client ID entered could not be found. User provided '" + stringID + "'.");
 		} catch (SQLException e3) {
 			throw new DatabaseException("Could not connect to the database." + e3.getMessage()); 
+		} catch (NumberFormatException e1) {
+			throw new BadParameterException("Client ID must be of type (int). User provided '" + stringID + "'.");
 		}
 
 	}
 
 	public Client addClient(PostClientDTO clientDTO) throws EmptyClientNameException, DatabaseException, ClientNotAddedException, BadParameterException {
+		logger.info("Performing business logic now inside of the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
@@ -92,6 +89,8 @@ public class ClientService {
 
 			Client client = clientRepository.addClient(clientDTO);
 			connection.commit();
+			logger.info("SQL Query Success! Now back inside Service layer performing business logic.");
+			
 			return client;
 
 		} catch (SQLException e) {
@@ -103,6 +102,7 @@ public class ClientService {
 	}
 
 	public Client updateClient(String clientID, PutClientDTO clientDTO) throws BadParameterException, SQLException, DatabaseException, EmptyClientNameException {
+		logger.info("Performing business logic now inside of the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
@@ -115,6 +115,8 @@ public class ClientService {
 			}
 			Client updatedClient = new Client(clientID, clientDTO.getFirstName(), clientDTO.getLastName());
 			Client client = clientRepository.updateClient(updatedClient);
+			connection.commit();
+			logger.info("SQL Query Success! Now back inside Service layer performing business logic.");
 			
 			
 			return client; 
@@ -126,7 +128,8 @@ public class ClientService {
 		}
 	}
 
-	public Client deleteClient(String clientID) throws DatabaseException, BadParameterException, ClientNotFoundException {
+	public Client deleteClient(String clientID) throws DatabaseException, BadParameterException, ClientNotFoundException, ClientNotDeletedException {
+		logger.info("Performing business logic now inside of the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
@@ -135,6 +138,8 @@ public class ClientService {
 			int id = Integer.parseInt(clientID);
 			
 			Client client = clientRepository.deleteClient(clientID);
+			connection.commit();
+			logger.info("SQL Query Success! Now back inside Service layer performing business logic.");
 			
 			return client; 
 			

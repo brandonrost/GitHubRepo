@@ -14,7 +14,9 @@ import com.revature.dto.PostAccountDTO;
 import com.revature.models.Account;
 import com.revature.models.Client;
 import com.revature.util.ConnectionUtil;
+import com.revature.exceptions.AccountBalanceNegativeException;
 import com.revature.exceptions.AccountDoesNotBelongToClientException;
+import com.revature.exceptions.AccountNameNullException;
 import com.revature.exceptions.AccountNotAddedException;
 import com.revature.exceptions.AccountTypeMismatchException;
 import com.revature.exceptions.BadParameterException;
@@ -43,7 +45,7 @@ public class AccountService {
 	}	
 
 	
-	public Client addAccount(String clientID, PostAccountDTO accountDTO) throws DatabaseException, BadParameterException, EmptyAccountTypeException, AccountNotAddedException {
+	public Client addAccount(String clientID, PostAccountDTO accountDTO) throws DatabaseException, BadParameterException, EmptyAccountTypeException, AccountNotAddedException, ClientNotFoundException, AccountTypeMismatchException, AccountNameNullException, AccountBalanceNegativeException {
 		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -56,6 +58,18 @@ public class AccountService {
 			if (accountDTO.getAccountType().trim().strip()=="") {
 				throw new EmptyAccountTypeException("Account Type can not be empty."); 
 			}
+			
+			if (accountDTO.getAccountName().trim().strip() == "")throw new AccountNameNullException("Account could not be added because Account Name was null."); 
+			
+			boolean accountTypeWrong = true; 			
+			if(accountDTO.getAccountType().trim().strip().equals("Savings") || accountDTO.getAccountType().equals("Checking")) {
+				accountTypeWrong = false;  
+			}
+			
+			if(accountTypeWrong)throw new AccountTypeMismatchException("Account Type must be either 'Savings' or 'Checking'. User provided " + accountDTO.getAccountType()); 
+			
+			if(accountDTO.getBalance() < 0) throw new AccountBalanceNegativeException("Account can not be created with an negative or null balance.");
+			
 			
 			Client client = clientRepository.getClientById(client_id);
 			
@@ -75,7 +89,7 @@ public class AccountService {
 		}
 	}
 
-	public Client getAccounts(String clientID) throws DatabaseException, BadParameterException, NoAccountsFoundException {
+	public Client getAccounts(String clientID) throws DatabaseException, BadParameterException, NoAccountsFoundException, ClientNotFoundException {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.accountRepository.setConnection(connection);
@@ -99,7 +113,7 @@ public class AccountService {
 		}
 	}
 
-	public Client getAccountByBalance(String clientID, String greaterAmount, String lesserAmount) throws DatabaseException, BadParameterException, NoAccountsFoundException {
+	public Client getAccountByBalance(String clientID, String greaterAmount, String lesserAmount) throws DatabaseException, BadParameterException, NoAccountsFoundException, ClientNotFoundException {
 		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -143,7 +157,7 @@ public class AccountService {
 		}
 	}
 
-	public Client getAccount(String clientID, String accountID) throws DatabaseException, BadParameterException, NoAccountsFoundException, AccountDoesNotBelongToClientException {
+	public Client getAccount(String clientID, String accountID) throws DatabaseException, BadParameterException, NoAccountsFoundException, AccountDoesNotBelongToClientException, ClientNotFoundException {
 		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -184,7 +198,7 @@ public class AccountService {
 		} 
 	}
 
-	public Client updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) throws DatabaseException, BadParameterException, AccountTypeMismatchException, AccountDoesNotBelongToClientException {
+	public Client updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) throws DatabaseException, BadParameterException, AccountTypeMismatchException, AccountDoesNotBelongToClientException, ClientNotFoundException {
 		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -235,7 +249,7 @@ public class AccountService {
 		}
 	}
 
-	public Client deleteAccount(String clientID, String accountID) throws DatabaseException, BadParameterException {
+	public Client deleteAccount(String clientID, String accountID) throws DatabaseException, BadParameterException, ClientNotFoundException {
 		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();

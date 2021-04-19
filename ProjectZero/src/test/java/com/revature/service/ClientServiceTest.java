@@ -29,7 +29,7 @@ public class ClientServiceTest {
 	public static ArrayList<Client> clientArray;
 
 	@BeforeClass
-	public static void setUp() throws DatabaseException {
+	public static void setUp() throws DatabaseException, ClientNotFoundException, ClientListNullException {
 		mockClientRepository = mock(ClientRepository.class);
 
 		when(mockClientRepository.getClientById(eq(1))).

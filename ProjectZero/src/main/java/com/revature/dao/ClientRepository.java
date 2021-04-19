@@ -13,7 +13,9 @@ import org.slf4j.LoggerFactory;
 import com.revature.dto.PostClientDTO;
 import com.revature.dto.PutClientDTO;
 import com.revature.exceptions.BadParameterException;
+import com.revature.exceptions.ClientListNullException;
 import com.revature.exceptions.ClientNotAddedException;
+import com.revature.exceptions.ClientNotDeletedException;
 import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.models.Account;
@@ -35,7 +37,7 @@ public class ClientRepository {
 		this.connection = connection;
 	}
 
-	public Client getClientById(int id) throws DatabaseException {
+	public Client getClientById(int id) throws DatabaseException, ClientNotFoundException {
 		logger.info("Accessing the database inside of the " + this.getClass());		
 		try {
 			String sql = "SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance "
@@ -51,11 +53,15 @@ public class ClientRepository {
 			logger.info("Executed SQL Statement: " + sql);
 			
 			if (recordsAdded == false) {
-				throw new DatabaseException("Could not find Client with that ID. User entered " + id);
+				throw new DatabaseException("Could not execute SQL Statment. Something wrong with SQL syntax.");
 			}
 
 			ResultSet rs = pstmt.getResultSet(); 
 			Client client = new Client(); 
+			
+			if(rs.next()==false) throw new ClientNotFoundException("Could not find client with ID of '" + String.valueOf(id) + "'."); 
+			
+			rs.beforeFirst();
 			while(rs.next()) {
 				if(rs.isFirst()) {
 					String client_id = String.valueOf(rs.getInt(1));
@@ -65,6 +71,7 @@ public class ClientRepository {
 					client.setLastName(client_last_name);
 					client.setId(client_id);
 				}
+				
 				String account_id = String.valueOf(rs.getInt(4));
 				if(rs.wasNull())break; 
 				String account_type = rs.getString(5);
@@ -77,14 +84,13 @@ public class ClientRepository {
 			
 			
 		} catch (SQLException e) {
-			throw new DatabaseException(
-					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
-		} catch (DatabaseException e2) {
-			throw new DatabaseException("Could not find Client with that ID. User entered " + id); 
+			throw new DatabaseException("Something went wrong with the database. " + "Exception message: " + e.getMessage());
 		}
 	}
 
-	public ArrayList<Client> getClients() throws DatabaseException {
+	public ArrayList<Client> getClients() throws DatabaseException, ClientListNullException {
+		logger.info("Accessing the database through the " + this.getClass());
+		
 		ArrayList<Client> clientArray = new ArrayList<Client>();
 
 		try (Connection connection = ConnectionUtil.getConnection()){
@@ -92,14 +98,13 @@ public class ClientRepository {
 
 			Statement stmt = connection.createStatement();
 
-			int recordsAdded = stmt.executeUpdate(sql);
+			boolean recordsAdded = stmt.execute(sql);
+			logger.info("Executed SQL Statement: " + sql);
 
 			ResultSet rs = stmt.getResultSet();
 			
-			System.out.println(rs.getRow());
-			
 			if (rs.next()==false) {
-				throw new DatabaseException("Could Not retrieve clients from database.");
+				throw new ClientListNullException("There are currently no clients available to access in the 'client' table.");
 			}
 			rs.beforeFirst();
 			
@@ -111,15 +116,13 @@ public class ClientRepository {
 			}
 			
 		} catch (SQLException e) {
-			throw new DatabaseException(
-					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
-		}
-		
+			throw new DatabaseException("Something went wrong with the database. " + "Exception message: " + e.getMessage());
+		}		
 		return clientArray;
 	}
 
 	public Client addClient(PostClientDTO clientDTO) throws DatabaseException, ClientNotAddedException {
-
+		logger.info("Accessing the database through the " + this.getClass());
 		try {
 			String sql = "INSERT INTO client (client_first_name, client_last_name) VALUES (?,?)";
 
@@ -128,6 +131,7 @@ public class ClientRepository {
 			pstmt.setString(2, clientDTO.getLastName());
 
 			int recordsAdded = pstmt.executeUpdate();
+			logger.info("Executed SQL Statement: " + sql);
 
 			if (recordsAdded != 1) {
 				throw new DatabaseException("Couldn't add Client to the Database.");
@@ -175,7 +179,7 @@ public class ClientRepository {
 		}
 	}
 
-	public Client deleteClient(String clientID) throws DatabaseException, ClientNotFoundException {
+	public Client deleteClient(String clientID) throws DatabaseException, ClientNotFoundException, ClientNotDeletedException {
 		logger.info("Accessing the database through the " + this.getClass());
 		try {
 			String sql = "SELECT * FROM client WHERE client.id = ?;";
@@ -186,7 +190,7 @@ public class ClientRepository {
 			boolean recordsAdded = pstmt.execute();
 			
 			if(recordsAdded == false) {
-				throw new DatabaseException("Could not delete Client from the 'client' table."); 
+				throw new ClientNotFoundException("There was no client in the database with the id of '" + clientID +"'."); 
 			}
 			
 			logger.info("Executed SQL Statement: " + sql);
@@ -198,8 +202,8 @@ public class ClientRepository {
 				client.setId(clientID);
 				client.setFirstName(rs.getString(2));
 				client.setLastName(rs.getString(3));
-			}else {
-				throw new DatabaseException("Could not delete Client from the 'client' table."); 
+			} else {
+				throw new ClientNotFoundException("There was no client in the database with the id of '" + clientID +"'.");
 			}
 						
 			String sql2 = "DELETE FROM client WHERE client.id = ?;";
@@ -210,7 +214,7 @@ public class ClientRepository {
 			int recordsAdded2 = pstmt2.executeUpdate(); 
 			
 			if(recordsAdded2 == 0) {
-				throw new DatabaseException("Could not delete Client from the 'client' table."); 
+				throw new ClientNotFoundException("There was no client in the database with the id of '" + clientID +"'.");
 			}
 			
 			logger.info("Executed SQL Statement: " + sql);
@@ -219,9 +223,7 @@ public class ClientRepository {
 			
 		} catch (SQLException e) {
 			throw new DatabaseException("Something went wrong with the database query. Exception Message: " + e.getMessage()); 
-		} catch (DatabaseException e2) {
-			throw new ClientNotFoundException("There was no client in the database with the id of '" + clientID +"'. Exception Message: "+ e2.getMessage()); 
-		}
+		} 
 	}
 
 }
