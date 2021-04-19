@@ -2,6 +2,7 @@ package com.revature.controller;
 
 import java.util.ArrayList;
 
+import com.revature.dto.AddClientToAccountDTO;
 import com.revature.dto.PostAccountDTO;
 import com.revature.models.Account;
 import com.revature.models.Client;
@@ -134,10 +135,36 @@ public class AccountController implements Controller {
 		ctx.status(200);
 
 	};
+	
+	private Handler addClientToAccount = ctx ->{
+		String clientID = ctx.pathParam("clientid");
+		String accountID = ctx.pathParam("accountid"); 
+		AddClientToAccountDTO clientToBeAdded = ctx.bodyAsClass(AddClientToAccountDTO.class); 
+		
+		
+		Client client = accountService.addClientToAccount(clientID, accountID, clientToBeAdded); 
+		
+		if (client == null) {
+			ctx.status(400);
+		}else {
+			StringBuilder htmlString = new StringBuilder();
+			htmlString.append("<h1>Added Client To Account</h1>");
+			htmlString.append("<p><h3>ClientName: " + client.getFirstName() + " " + client.getLastName() + "</h3></p>\n");
+			
+			Account client_account = client.getAccounts().get(client.getAccounts().size()-1); 
+			htmlString.append("<p><b>Account Type:</b> " + client_account.getAccountType() + "</p>"
+							+ "<p><b>Account Name:</b> " + client_account.getAccountName() + "</p>" 
+							+ "<p><b>Account Balance:</b> " + client_account.getBalance() + "</p>");
+
+			ctx.html(htmlString.toString());
+			ctx.status(201);
+		}
+	};
 
 	@Override
 	public void mapEndpoints(Javalin app) {
 		app.post("/clients/:clientid/accounts", addAccount); 
+		app.post("/clients/:clientid/accounts/:accountid", addClientToAccount); 
 		app.get("/clients/:clientid/accounts", getAccounts);
 		app.get("/clients/:clientid/accounts/:accountid", getAccount);
 		app.put("/clients/:clientid/accounts/:accountid", updateAccount);

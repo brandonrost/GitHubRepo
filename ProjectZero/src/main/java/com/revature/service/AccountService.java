@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import com.revature.dao.AccountRepository;
 import com.revature.dao.ClientRepository;
+import com.revature.dto.AddClientToAccountDTO;
 import com.revature.dto.PostAccountDTO;
 import com.revature.models.Account;
 import com.revature.models.Client;
@@ -17,6 +18,8 @@ import com.revature.exceptions.AccountDoesNotBelongToClientException;
 import com.revature.exceptions.AccountNotAddedException;
 import com.revature.exceptions.AccountTypeMismatchException;
 import com.revature.exceptions.BadParameterException;
+import com.revature.exceptions.ClientNotAddedToAccountException;
+import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.exceptions.EmptyAccountTypeException;
 import com.revature.exceptions.EmptyClientNameException;
@@ -271,6 +274,58 @@ public class AccountService {
 			throw new BadParameterException("Client ID and Account ID must be of type (int). User provided '" + clientID + "' and '" + accountID + "'."); 
 		} catch (NoAccountsFoundException e4) {
 			throw new BadParameterException("Account with ID of '"+ accountID +"' does not belong to Client with ID of '"+ clientID + "'."); 
+		}
+	}
+
+	public Client addClientToAccount(String clientID, String accountID, AddClientToAccountDTO clientToBeAdded) throws DatabaseException, ClientNotAddedToAccountException, BadParameterException, AccountDoesNotBelongToClientException, ClientNotFoundException {
+		logger.info("Curently performing business logic inside the " + this.getClass());
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.accountRepository.setConnection(connection);
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int client_id = Integer.parseInt(clientID);
+			int account_id = Integer.parseInt(accountID); 
+						
+			Client client = clientRepository.getClientById(client_id); 
+			ArrayList<Account> client_accounts = client.getAccounts(); 
+			boolean ownsAccount = false; 
+			
+			for(Account account:client_accounts) {
+				if(account.getAccountId().equals(accountID) && ownsAccount == false) {
+					ownsAccount = true;
+				}
+			}
+			
+			Client addedClient; 
+			if(ownsAccount == true) {
+				try {
+					clientRepository.getClientById(Integer.valueOf(clientToBeAdded.getClientID())); 
+					logger.info("Account belongs to Client with ID of '"+clientID+"'.");
+					accountRepository.addClientToAccount(accountID, clientToBeAdded.getClientID()); 				
+					connection.commit();
+				}catch(DatabaseException e) {
+					throw new ClientNotFoundException(); 
+				}	
+				addedClient = clientRepository.getClientById(Integer.valueOf(clientToBeAdded.getClientID())); 
+				logger.info("SQL Query Success! Now back inside the " + this.getClass());
+				System.out.println(addedClient.toString());
+				
+			}else {
+				throw new NoAccountsFoundException(); 
+			}
+						
+			return addedClient; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the Database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client ID and Account ID must be of type (int). User provided '" + clientID + "' and '" + accountID + "'."); 
+		} catch (ClientNotFoundException e4) {
+			throw new BadParameterException("Could not find client with ID of '"+ clientToBeAdded.getClientID() + "' in the database."); 
+		} catch (NoAccountsFoundException e3) {
+			throw new AccountDoesNotBelongToClientException("Account with ID of '"+ accountID +"' does not belong to Client with ID of '"+ clientID + "'."); 
 		}
 	}
 

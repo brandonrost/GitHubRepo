@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.revature.dto.PostAccountDTO;
 import com.revature.exceptions.AccountNotAddedException;
 import com.revature.exceptions.AccountNotDeletedException;
+import com.revature.exceptions.ClientNotAddedToAccountException;
 import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.exceptions.NoAccountsFoundException;
@@ -233,8 +234,7 @@ public class AccountRepository {
 		}
 	}
 
-	public Account updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated)
-			throws DatabaseException {
+	public Account updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) throws DatabaseException {
 		logger.info("Accessing the database through the " + this.getClass());
 		try {
 			String sql = "UPDATE account SET account_type = ?, account_name = ?, account_balance = ? WHERE account.id = ?";
@@ -315,6 +315,30 @@ public class AccountRepository {
 					"Could not find an account in the database with the ID of '" + accountID + "'.");
 		} catch (AccountNotDeletedException e3) {
 			throw new DatabaseException("Could not delete Account from 'account' table.");
+		}
+	}
+
+	public void addClientToAccount(String accountID, String clientToBeAddedID) throws DatabaseException, ClientNotAddedToAccountException {
+		logger.info("Accessing the database through the " + this.getClass());
+		try {
+			String sql = "INSERT INTO client_account(client_id, account_id) VALUES (?, ?);";
+
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setInt(2, Integer.valueOf(accountID));
+			pstmt.setInt(1, Integer.valueOf(clientToBeAddedID));
+
+			int recordsAdded = pstmt.executeUpdate(); 
+
+			if (recordsAdded == 0) {
+				throw new DatabaseException("Could not add Client to Account.");
+			}
+
+			logger.info("Executed SQL Statement: " + sql);
+
+		} catch (SQLException e) {
+			throw new DatabaseException("Something went wrong with the database query. Exception Message: " + e.getMessage());
+		} catch (DatabaseException e1) {
+			throw new ClientNotAddedToAccountException("Client with ID of '" + clientToBeAddedID + "' could not be added to the Account with ID of '"+ accountID + "'.");
 		}
 	}
 
