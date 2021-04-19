@@ -7,10 +7,19 @@ public class Client {
 	private String id; 
 	private String firstName;
 	private String lastName;
-	private ArrayList<Account> accounts = new ArrayList<Account>(); 
+	private ArrayList<Account> accounts = new ArrayList<Account>();  
 	
 	public Client() {
 		super(); 
+	}
+	
+	public Client(String id, String firstName, String lastName, ArrayList<Account> accounts) {
+		this.id = id; 
+		this.firstName = firstName; 
+		this.lastName = lastName; 
+		for(Account account:accounts) {
+			this.accounts.add(account); 
+		}
 	}
 
 	public Client(String id, String firstName, String lastName) {
@@ -22,6 +31,7 @@ public class Client {
 	
 	public Client(String firstName, String lastName) {
 		super();
+		this.id = null; 
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}

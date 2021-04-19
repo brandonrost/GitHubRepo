@@ -12,6 +12,7 @@ import com.revature.dto.PostClientDTO;
 import com.revature.dto.PutClientDTO;
 import com.revature.exceptions.BadParameterException;
 import com.revature.exceptions.ClientListNullException;
+import com.revature.exceptions.ClientNotAddedException;
 import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.exceptions.EmptyClientNameException;
@@ -78,7 +79,7 @@ public class ClientService {
 
 	}
 
-	public Client addClient(PostClientDTO clientDTO) throws EmptyClientNameException, DatabaseException {
+	public Client addClient(PostClientDTO clientDTO) throws EmptyClientNameException, DatabaseException, ClientNotAddedException, BadParameterException {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);
@@ -96,6 +97,8 @@ public class ClientService {
 		} catch (SQLException e) {
 			throw new DatabaseException(
 					"Something went wrong when trying to get a connection. " + "Exception message: " + e.getMessage());
+		} catch (EmptyClientNameException e2) {
+			throw new BadParameterException("Client first/last name can not be null. Please try again!"); 
 		}
 	}
 
@@ -113,6 +116,7 @@ public class ClientService {
 			Client updatedClient = new Client(clientID, clientDTO.getFirstName(), clientDTO.getLastName());
 			Client client = clientRepository.updateClient(updatedClient);
 			
+			
 			return client; 
 			
 		} catch (SQLException e) {
@@ -122,7 +126,7 @@ public class ClientService {
 		}
 	}
 
-	public Client deleteClient(String clientID) throws DatabaseException, BadParameterException {
+	public Client deleteClient(String clientID) throws DatabaseException, BadParameterException, ClientNotFoundException {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.clientRepository.setConnection(connection);

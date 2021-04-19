@@ -12,7 +12,10 @@ import org.slf4j.LoggerFactory;
 
 import com.revature.dto.PostAccountDTO;
 import com.revature.exceptions.AccountNotAddedException;
+import com.revature.exceptions.AccountNotDeletedException;
+import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
+import com.revature.exceptions.NoAccountsFoundException;
 import com.revature.models.Account;
 import com.revature.models.Client;
 
@@ -85,11 +88,44 @@ public class AccountRepository {
 		}
 	}
 
-	public ArrayList<Account> getAccounts(String clientID) {
-		ArrayList<Account> accounts = new ArrayList<Account>();
-		accounts.add(new Account("Savings","MySavingsAccount",10));
-		accounts.add(new Account("Checking","MySecondChecking", 100)); 
-		return accounts; 
+	public ArrayList<Account> getAccounts(String clientID) throws NoAccountsFoundException, DatabaseException {
+		logger.info("Connecting to database inside the "+ this.getClass());
+		try {
+			String sql = "SELECT a.id AS AccountID, a.account_type AS AccountType, a.account_type AS AccountName, a.account_balance AS Balance "
+					+ "FROM account AS a "
+					+ "LEFT JOIN client_account AS ca ON a.id = ca.account_id "
+					+ "LEFT JOIN client AS c ON c.id = ca.client_id "
+					+ "WHERE c.id = ?;";
+
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setInt(1, Integer.valueOf(clientID));
+
+			boolean recordsQueried = pstmt.execute(); 
+			logger.info("Executed SQL Statment: " + sql);
+
+			if (recordsQueried == false) {
+				throw new DatabaseException();
+			}
+			
+			ResultSet rs = pstmt.getResultSet(); 
+			
+			ArrayList<Account> client_accounts = new ArrayList<>(); 
+			
+			while(rs.next()) {
+				String account_id = String.valueOf(rs.getInt(1));
+				String account_type = rs.getString(2); 
+				String account_name = rs.getString(3);
+				int account_balance = rs.getInt(4); 
+				client_accounts.add(new Account(account_id, account_type, account_name, account_balance)); 
+			}
+			
+			return client_accounts; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the database. Exception Message: " + e.getMessage()); 
+		} catch (DatabaseException e2) {
+			throw new NoAccountsFoundException("Could not find any accounts in the Database belonging to client with ID of '"+ clientID + "'.");
+		}
 	}
 
 	public ArrayList<Account> getAccountByBalance(String clientID, String greaterAmount, String lesserAmount) {
@@ -105,24 +141,123 @@ public class AccountRepository {
 		return accounts;
 	}
 
-	public Account getAccount(String clientID, String accountID) {
-		Account account = new Account("Savings", "getAccount", 100); 
-		return account; 
-	}
+	public Account getAccount(String clientID, String accountID) throws DatabaseException, NoAccountsFoundException {
+		logger.info("Connecting to database inside the "+ this.getClass());
+		try {
+			String sql = "SELECT a.id AS AccountID, a.account_type AS AccountType, a.account_type AS AccountName, a.account_balance AS Balance "
+					+ "FROM account AS a "
+					+ "LEFT JOIN client_account AS ca ON a.id = ca.account_id "
+					+ "LEFT JOIN client AS c ON c.id = ca.client_id "
+					+ "WHERE c.id = ? AND a.id = ?;";
 
-	public Account updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) {
-		Account updatedAccount = new Account(accountToBeUpdated.getAccountType(), accountToBeUpdated.getAccountName(), accountToBeUpdated.getBalance()); 
-		return updatedAccount;
-	}
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setInt(1, Integer.valueOf(clientID));
+			pstmt.setInt(2, Integer.valueOf(accountID));
 
-	public Account deleteAccount(String clientID, String accountID) {
-		Account deletedAccount; 
-		if(Integer.valueOf(clientID)==1 && Integer.valueOf(accountID)==1) {
-			deletedAccount = new Account("Checking","DeletedAccount", 10000); 
-		}else {
-			deletedAccount = new Account("Checking","AccountNotDeleted",10); 
+			boolean recordsQueried = pstmt.execute(); 
+			logger.info("Executed SQL Statment: " + sql);
+
+			if (recordsQueried == false) {
+				throw new DatabaseException();
+			}
+			
+			ResultSet rs = pstmt.getResultSet(); 
+			
+			Account client_account = new Account(); 
+			
+			if(rs.next()) {
+				client_account.setAccountId(String.valueOf(rs.getInt(1)));
+				client_account.setAccountType(rs.getString(2));
+				client_account.setAccountName(rs.getString(3));
+				client_account.setBalance(rs.getInt(4));
+			}			
+			return client_account; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the database. Exception Message: " + e.getMessage()); 
+		} catch (DatabaseException e2) {
+			throw new NoAccountsFoundException("Could not find any accounts in the Database belonging to client with ID of '"+ clientID + "'.");
 		}
-		return deletedAccount;
+	}
+
+	public Account updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) throws DatabaseException {
+		logger.info("Accessing the database through the " + this.getClass());
+		try {
+			String sql = "UPDATE account SET account_type = ?, account_name = ?, account_balance = ? WHERE account.id = ?";
+
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setString(1, accountToBeUpdated.getAccountType());
+			pstmt.setString(2, accountToBeUpdated.getAccountName());
+			pstmt.setInt(3, accountToBeUpdated.getBalance());
+			pstmt.setInt(4, Integer.valueOf(accountID));
+			
+			int recordsAdded = pstmt.executeUpdate(); 
+			
+			if(recordsAdded == 0) {
+				throw new DatabaseException("Could not update Account with new information."); 
+			}
+			
+			Account account = new Account(accountID, accountToBeUpdated.getAccountType(), accountToBeUpdated.getAccountName(), accountToBeUpdated.getBalance());
+			
+			logger.info("Executed SQL Statement: " + sql);
+			
+			return account;
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Something went wrong with the database query. Exception Message: " + e.getMessage()); 
+		}
+	}
+
+	public Account deleteAccount(String clientID, String accountID) throws DatabaseException {
+		logger.info("Accessing the database through the " + this.getClass());
+		try {
+			String sql = "SELECT * FROM account WHERE account.id = ?;";
+			
+			PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			pstmt.setInt(1, Integer.valueOf(accountID));
+			
+			boolean recordsAdded = pstmt.execute();		
+			
+			if(recordsAdded == false) {
+				throw new NoAccountsFoundException(); 
+			}
+			
+			logger.info("Executed SQL Statement: " + sql);
+			
+			ResultSet rs = pstmt.getResultSet(); 
+			
+			Account account = new Account(); 			
+			if(rs.next()) {
+				account.setAccountId(String.valueOf(rs.getInt(1)));
+				account.setAccountType(rs.getString(2));
+				account.setAccountName(rs.getString(3));
+				account.setBalance(rs.getInt(4));
+			}else {
+				throw new DatabaseException(); 
+			}
+						
+			String sql2 = "DELETE FROM account WHERE account.id = ?;";
+
+			PreparedStatement pstmt2 = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);
+			pstmt2.setInt(1, Integer.valueOf(accountID));
+			
+			int recordsAdded2 = pstmt2.executeUpdate(); 
+			
+			if(recordsAdded2 == 0) {
+				throw new AccountNotDeletedException("Could not delete Account from the 'account' table."); 
+			}
+			
+			logger.info("Executed SQL Statement: " + sql2);
+			
+			return account;
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Something went wrong with the database query. Exception Message: " + e.getMessage()); 
+		} catch (NoAccountsFoundException e2) {
+			throw new DatabaseException("Could not find an account in the database with the ID of '" + accountID + "'."); 
+		} catch (AccountNotDeletedException e3) {
+			throw new DatabaseException("Could not delete Account from 'account' table."); 
+		}
 	}
 
 }

@@ -14,10 +14,12 @@ import com.revature.models.Account;
 import com.revature.models.Client;
 import com.revature.util.ConnectionUtil;
 import com.revature.exceptions.AccountNotAddedException;
+import com.revature.exceptions.AccountTypeMismatchException;
 import com.revature.exceptions.BadParameterException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.exceptions.EmptyAccountTypeException;
 import com.revature.exceptions.EmptyClientNameException;
+import com.revature.exceptions.NoAccountsFoundException;
 
 public class AccountService {
 	
@@ -34,12 +36,11 @@ public class AccountService {
 	public AccountService(AccountRepository accountRepository) {
 		this.accountRepository = accountRepository;
 		this.clientRepository = new ClientRepository(); 
-	}
-	
-	
+	}	
 
 	
 	public Client addAccount(String clientID, PostAccountDTO accountDTO) throws DatabaseException, BadParameterException, EmptyAccountTypeException, AccountNotAddedException {
+		logger.info("Curently performing business logic inside the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			this.accountRepository.setConnection(connection);
@@ -53,13 +54,14 @@ public class AccountService {
 			}
 			
 			Client client = clientRepository.getClientById(client_id);
-			//Client client = new Client(clientID, "Tom", "Cruise"); //for now use this
+			
 			Account account = accountRepository.addAccount(clientID, accountDTO); 
-			
-			System.out.println(account.toString());
-			
-			client.addAccount(account);	
 			connection.commit();
+			
+			logger.info("SQL Query Success! Now back inside the " + this.getClass());
+	
+			client.addAccount(account);	
+			
 			return client;
 			
 		} catch(SQLException e1) {
@@ -69,8 +71,28 @@ public class AccountService {
 		}
 	}
 
-	public ArrayList<Account> getAccounts(String clientID) {
-		return accountRepository.getAccounts(clientID); 
+	public Client getAccounts(String clientID) throws DatabaseException, BadParameterException, NoAccountsFoundException {
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.accountRepository.setConnection(connection);
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int client_id = Integer.parseInt(clientID); 
+			
+			Client client = clientRepository.getClientById(client_id); 						
+			ArrayList<Account> client_accounts = accountRepository.getAccounts(clientID); 
+			connection.commit();
+			
+			client.setAccounts(client_accounts);
+			
+			return client; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client id must be of type 'int'. User provided '" + clientID +"'."); 
+		}
 	}
 
 	public ArrayList<Account> getAccountByBalance(String clientID, String greaterAmount, String lesserAmount) {
@@ -78,19 +100,130 @@ public class AccountService {
 		return accountRepository.getAccountByBalance(clientID, greaterAmount, lesserAmount);
 	}
 
-	public Account getAccount(String clientID, String accountID) {
-		// TODO Auto-generated method stub
-		return accountRepository.getAccount(clientID, accountID);
+	public Client getAccount(String clientID, String accountID) throws DatabaseException, BadParameterException, NoAccountsFoundException {
+		logger.info("Curently performing business logic inside the " + this.getClass());
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.accountRepository.setConnection(connection);
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int client_id = Integer.parseInt(clientID);
+			int account_id = Integer.parseInt(accountID); 
+			
+			Client client = clientRepository.getClientById(client_id); 	
+			client.setAccounts(new ArrayList<Account>());
+			Account client_account = accountRepository.getAccount(clientID , accountID); 
+			connection.commit();
+			
+			logger.info("SQL Query Success! Now back inside the " + this.getClass());
+			
+			client.addAccount(client_account);
+			
+			Account insertedAccount = client.getAccounts().get(0); 
+			
+			return client; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client id must be of type 'int'. User provided '" + clientID +"'."); 
+		} catch (IndexOutOfBoundsException e3) {
+			throw new NoAccountsFoundException("Could not find account associated with client with ID of '" + clientID +"'."); 
+		}
 	}
 
-	public Account updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) {
-		// TODO Auto-generated method stub
-		return accountRepository.updateAccount(clientID, accountID, accountToBeUpdated);
+	public Client updateAccount(String clientID, String accountID, PostAccountDTO accountToBeUpdated) throws DatabaseException, BadParameterException, AccountTypeMismatchException {
+		logger.info("Curently performing business logic inside the " + this.getClass());
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.accountRepository.setConnection(connection);
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int id = Integer.parseInt(clientID);
+			int account_id = Integer.parseInt(accountID); 
+			
+			boolean accountTypeWrong = true; 			
+			if(accountToBeUpdated.getAccountType().trim().strip().equals("Savings") || accountToBeUpdated.getAccountType().equals("Checking")) {
+				accountTypeWrong = false;  
+			}
+			
+			if(accountTypeWrong)throw new BadParameterException(); 
+			
+			Client client = clientRepository.getClientById(id); 
+			ArrayList<Account> client_accounts = client.getAccounts(); 
+			boolean ownsAccount = false; 
+			
+			for(Account account:client_accounts) {
+				if(account.getAccountId().equals(accountID) && ownsAccount == false) {
+					ownsAccount = true;
+				}
+			}
+			
+			if(ownsAccount == true) {
+				Account account = accountRepository.updateAccount(clientID, accountID, accountToBeUpdated); 				
+				connection.commit();				
+				client.setAccounts(new ArrayList<Account>());				
+				client.addAccount(account);
+				logger.info("SQL Query Success! Now back inside the " + this.getClass());
+			}else {
+				throw new NoAccountsFoundException(); 
+			}
+						
+			return client; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the Database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client ID and Account ID must be of type (int). User provided '" + clientID + "' and '" + accountID + "'."); 
+		} catch (BadParameterException e3) {
+			throw new AccountTypeMismatchException("Account Type must be of type 'Checking' or 'Savings'. User entered " + accountToBeUpdated.getAccountType()); 
+		} catch (NoAccountsFoundException e4) {
+			throw new BadParameterException("Account with ID of '"+ accountID +"' does not belong to Client with ID of '"+ clientID + "'."); 
+		}
 	}
 
-	public Account deleteAccount(String clientID, String accountID) {
-		// TODO Auto-generated method stub
-		return accountRepository.deleteAccount(clientID,accountID);
+	public Client deleteAccount(String clientID, String accountID) throws DatabaseException, BadParameterException {
+		logger.info("Curently performing business logic inside the " + this.getClass());
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			this.accountRepository.setConnection(connection);
+			this.clientRepository.setConnection(connection);
+			connection.setAutoCommit(true);
+			
+			int id = Integer.parseInt(clientID);
+			int account_id = Integer.parseInt(accountID); 
+			
+			Client client = clientRepository.getClientById(id); 
+			ArrayList<Account> client_accounts = client.getAccounts(); 
+			boolean ownsAccount = false; 
+			
+			for(Account account:client_accounts) {
+				if(account.getAccountId().equals(accountID) && ownsAccount == false) {
+					ownsAccount = true;
+				}
+			}			
+			
+			if(ownsAccount == true) {
+				Account account = accountRepository.deleteAccount(clientID, accountID); 	
+				logger.info("SQL Query Success! Now back inside the " + this.getClass());
+				connection.commit();				
+				client.setAccounts(new ArrayList<Account>());				
+				client.addAccount(account);
+			}else {
+				throw new NoAccountsFoundException(); 
+			}	
+			
+			return client; 
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Could not connect to the Database. Exception Message: " + e.getMessage()); 
+		} catch (NumberFormatException e2) {
+			throw new BadParameterException("Client ID and Account ID must be of type (int). User provided '" + clientID + "' and '" + accountID + "'."); 
+		} catch (NoAccountsFoundException e4) {
+			throw new BadParameterException("Account with ID of '"+ accountID +"' does not belong to Client with ID of '"+ clientID + "'."); 
+		}
 	}
 
 }

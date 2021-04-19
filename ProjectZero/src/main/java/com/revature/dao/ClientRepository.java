@@ -12,6 +12,9 @@ import org.slf4j.LoggerFactory;
 
 import com.revature.dto.PostClientDTO;
 import com.revature.dto.PutClientDTO;
+import com.revature.exceptions.BadParameterException;
+import com.revature.exceptions.ClientNotAddedException;
+import com.revature.exceptions.ClientNotFoundException;
 import com.revature.exceptions.DatabaseException;
 import com.revature.models.Account;
 import com.revature.models.Client;
@@ -35,7 +38,7 @@ public class ClientRepository {
 	public Client getClientById(int id) throws DatabaseException {
 		logger.info("Accessing the database inside of the " + this.getClass());		
 		try {
-			String sql = "SELECT c.id, c.client_first_name, c.client_last_name, a.id, a.account_type, a.account_name, a.account_balance "
+			String sql = "SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance "
 					+ "FROM client AS c "
 					+ "LEFT JOIN client_account AS ca ON c.id = ca.client_id "
 					+ "LEFT JOIN account AS a ON a.id = ca.account_id "
@@ -63,6 +66,7 @@ public class ClientRepository {
 					client.setId(client_id);
 				}
 				String account_id = String.valueOf(rs.getInt(4));
+				if(rs.wasNull())break; 
 				String account_type = rs.getString(5);
 				String account_name = rs.getString(6); 
 				int account_balance = rs.getInt(7);
@@ -114,7 +118,7 @@ public class ClientRepository {
 		return clientArray;
 	}
 
-	public Client addClient(PostClientDTO clientDTO) throws DatabaseException {
+	public Client addClient(PostClientDTO clientDTO) throws DatabaseException, ClientNotAddedException {
 
 		try {
 			String sql = "INSERT INTO client (client_first_name, client_last_name) VALUES (?,?)";
@@ -135,13 +139,13 @@ public class ClientRepository {
 				Client newClient = new Client(String.valueOf(id), clientDTO.getFirstName(), clientDTO.getLastName());
 				return newClient;
 			} else {
-				throw new DatabaseException(
-						"Client ID was not generated; therefore, Client was not successfully added.");
+				throw new ClientNotAddedException("Client ID was not generated; therefore, Client was not successfully added.");
 			}
 
 		} catch (SQLException e) {
-			throw new DatabaseException(
-					"Something went wrong with the database. " + "Exception message: " + e.getMessage());
+			throw new DatabaseException("Something went wrong with the database. " + "Exception message: " + e.getMessage());
+		} catch (DatabaseException e2) {
+			throw new ClientNotAddedException("Could not add Client to database. Exception Message: " + e2.getMessage()); 
 		}
 
 	}
@@ -171,7 +175,7 @@ public class ClientRepository {
 		}
 	}
 
-	public Client deleteClient(String clientID) throws DatabaseException {
+	public Client deleteClient(String clientID) throws DatabaseException, ClientNotFoundException {
 		logger.info("Accessing the database through the " + this.getClass());
 		try {
 			String sql = "SELECT * FROM client WHERE client.id = ?;";
@@ -180,8 +184,6 @@ public class ClientRepository {
 			pstmt.setInt(1, Integer.valueOf(clientID));
 			
 			boolean recordsAdded = pstmt.execute();
-			
-			System.out.println(recordsAdded); 
 			
 			if(recordsAdded == false) {
 				throw new DatabaseException("Could not delete Client from the 'client' table."); 
@@ -196,7 +198,6 @@ public class ClientRepository {
 				client.setId(clientID);
 				client.setFirstName(rs.getString(2));
 				client.setLastName(rs.getString(3));
-				System.out.println(client.toString());
 			}else {
 				throw new DatabaseException("Could not delete Client from the 'client' table."); 
 			}
@@ -218,6 +219,8 @@ public class ClientRepository {
 			
 		} catch (SQLException e) {
 			throw new DatabaseException("Something went wrong with the database query. Exception Message: " + e.getMessage()); 
+		} catch (DatabaseException e2) {
+			throw new ClientNotFoundException("There was no client in the database with the id of '" + clientID +"'. Exception Message: "+ e2.getMessage()); 
 		}
 	}
 
