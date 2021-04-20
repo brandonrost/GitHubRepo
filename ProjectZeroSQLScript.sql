@@ -25,7 +25,8 @@ CREATE TABLE client_account (
 
 ALTER TABLE client_account AUTO_INCREMENT= 1000;
 
--- Data Population --
+-- DATA POPULATION --
+--------------------------------------------------------------------------------------
 
 -- Clients --
 insert into Client (client_first_name, client_last_name) values ('Trix', 'Whines');
