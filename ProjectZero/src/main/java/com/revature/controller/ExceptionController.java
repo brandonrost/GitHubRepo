@@ -10,6 +10,7 @@ import com.revature.exceptions.AccountNotAddedException;
 import com.revature.exceptions.AccountNotDeletedException;
 import com.revature.exceptions.AccountTypeMismatchException;
 import com.revature.exceptions.BadParameterException;
+import com.revature.exceptions.ClientAlreadyOnAccountException;
 import com.revature.exceptions.ClientListNullException;
 import com.revature.exceptions.ClientNotAddedException;
 import com.revature.exceptions.ClientNotAddedToAccountException;
@@ -106,6 +107,11 @@ public class ExceptionController implements Controller {
 		ctx.status(400);
 	};
 	
+	private ExceptionHandler<ClientAlreadyOnAccountException> clientAlreadyOnAccountExceptionHandler = (e, ctx)->{
+		logger.warn("Duplicate account-client dependencies. Error Message: " + e.getMessage());
+		ctx.status(409);
+	};
+	
 	@Override
 	public void mapEndpoints(Javalin app) {
 		app.exception(BadParameterException.class, badParameterExceptionHandler);
@@ -124,6 +130,7 @@ public class ExceptionController implements Controller {
 		app.exception(ClientNotDeletedException.class, clientNotDeletedExceptionHandler);
 		app.exception(AccountNameNullException.class, accountNameNullExceptionHandler);
 		app.exception(AccountBalanceNegativeException.class, accountBalanceNegativeExceptionHandler); 
+		app.exception(ClientAlreadyOnAccountException.class, clientAlreadyOnAccountExceptionHandler); 
 	}
 
 }
