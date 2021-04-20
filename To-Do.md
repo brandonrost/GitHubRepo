@@ -63,6 +63,7 @@
 ##Stretch Goals That Are In Reach
 1. JAR file that can be ran on AWS server
 2. ~~Add additional endpoints~~
+   1. ~~addClientToAccount~~
 3. Database held in 
 4. Postman tests to verify API functionality
 5. Use at least 1 stored procedure w/ MariaDB
