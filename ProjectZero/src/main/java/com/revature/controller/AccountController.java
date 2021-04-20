@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import com.revature.dto.AddClientToAccountDTO;
 import com.revature.dto.PostAccountDTO;
+import com.revature.exceptions.NoAccountsFoundException;
 import com.revature.models.Account;
 import com.revature.models.Client;
 import com.revature.service.AccountService;
@@ -136,9 +137,26 @@ public class AccountController implements Controller {
 		PostAccountDTO accountToBeUpdated = ctx.bodyAsClass(PostAccountDTO.class);
 
 		Client client = accountService.updateAccount(clientID, accountID, accountToBeUpdated);
+		Account updatedAccount = new Account(); 
+		for(Account account:client.getAccounts()) {
+			if(account.getAccountId().equals(accountID)) {
+				updatedAccount = account; 
+			}
+		}
+		if(updatedAccount.getAccountId()==null) {
+			throw new NoAccountsFoundException(); 
+		} else {
+			StringBuilder html = new StringBuilder();
+			html.append("<h1>Update Account For " + client.getFirstName() + " " + client.getLastName() + "</h1><hr>");
+			html.append("<p><b>Account ID:</b> " + updatedAccount.getAccountId() + "<br>");
+			html.append("<b>Account Type:</b> " + updatedAccount.getAccountType() + "<br>");
+			html.append("<b>Account Name:</b> " + updatedAccount.getAccountName() + "<br>");
+			html.append("<b>Account Balance:</b> " + updatedAccount.getBalance() + "</p>");
 
-		ctx.status(204);
-		logger.info("Endpoint mapped successfully!");
+			ctx.html(html.toString());
+			ctx.status(200);
+			logger.info("Endpoint mapped successfully!");
+		}		
 	};
 
 	private Handler deleteAccount = ctx -> {

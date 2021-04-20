@@ -170,7 +170,7 @@ public class AccountService {
 			int client_id = Integer.parseInt(clientID);
 			int account_id = Integer.parseInt(accountID); 
 			
-			Client client = clientRepository.getClientById(client_id);  
+			Client client = clientRepository.getClientById(client_id);
 			ArrayList<Account> client_accounts = client.getAccounts(); 
 			boolean ownsAccount = false; 
 			
@@ -180,7 +180,7 @@ public class AccountService {
 				}
 			}			
 			if(ownsAccount == true) {
-				Account client_account = accountRepository.getAccount(clientID , accountID); 			
+				Account client_account = accountRepository.getAccount(clientID , accountID); 
 				connection.commit();				
 				client.setAccounts(new ArrayList<Account>());				
 				client.addAccount(client_account);
