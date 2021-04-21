@@ -29,86 +29,103 @@ public class ExceptionController implements Controller {
 	
 	private ExceptionHandler<BadParameterException> badParameterExceptionHandler = (e, ctx)->{
 		logger.warn("A user provided a bad parameter. Exception Message: " + e.getMessage());
+		ctx.html("Message: User provided bad parameter. Could not satisfy request.");
 		ctx.status(400); 
 	};
 	
 	private ExceptionHandler<ClientNotFoundException> clientNotFoundExceptionHandler = (e, ctx)->{
 		logger.warn("A user provided a bad parameter. Exception Message: " + e.getMessage()); 
+		ctx.html("Message: Client was not found.");
 		ctx.status(404); 
 	};
 	
 	private ExceptionHandler<ClientListNullException> clientListNullExceptionHandler = (e, ctx)->{
 		logger.warn("A user has requested access to Client table which is currently empty. Exception Message: " + e.getMessage()); 
+		ctx.html("Message: Client table is currently empty.");
 		ctx.status(400); 
 	};
 	
 	private ExceptionHandler<AccountDoesNotBelongToClientException> accountDoesNotBelongToClientExceptionHandler = (e, ctx)->{
 		logger.warn("A user has requested access to an Account that does not belong to them! Exception Message: " + e.getMessage());
+		ctx.html("Message: Account does not belong to Client.");
 		ctx.status(403); 
 	};
 	
 	private ExceptionHandler<AccountNotAddedException> accountNotAddedExceptionHandler = (e, ctx)->{
 		logger.warn("Account was unable to be added to the Database. Exception Message: " + e.getMessage());
+		ctx.html("Message: Account not found");
 		ctx.status(400); 
 	};
 	
 	private ExceptionHandler<AccountNotDeletedException> accountNotDeletedExceptionHandler = (e, ctx)->{
 		logger.warn("Account was unable to be deleted from the Database. Exception Message: " + e.getMessage());
+		ctx.html("Message: Account could not be deleted.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<AccountTypeMismatchException> accountTypeMismatchExceptionHandler = (e, ctx)->{
 		logger.warn("Account Type must either be 'checking' or 'savings'.");
+		ctx.html("Message: Account type must be either 'Checking' or 'Savings'.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<ClientNotAddedException> clientNotAddedExceptionHandler = (e, ctx)->{
 		logger.warn("Client could not be added to the Database. Exception Message: " + e.getMessage());
+		ctx.html("Message: Client could not be added.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<ClientNotAddedToAccountException> clientNotAddedToAccountExceptionHandler = (e, ctx)->{
 		logger.warn("Client could not be added to Account. Exception Message: " + e.getMessage());
+		ctx.html("Message: Client couldnt be added.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<DatabaseException> databaseExceptionHandler = (e, ctx)->{
 		logger.warn("There was an error in your SQL syntax or an error when connecting to Database. Exception Message: " + e.getMessage());
+		ctx.html("Message: Problem with database.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<EmptyAccountTypeException> emptyAccountTypeExceptionHandler = (e, ctx)->{
 		logger.warn("Account Type can not be left null. Please provide a non-empty String for Account_Type.");
+		ctx.html("Message: Account Type can not be empty.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<EmptyClientNameException> emptyClientNameExceptionHandler = (e, ctx)->{
 		logger.warn("Client Name can not be left blank. Please provide a first and last name for Client.");
+		ctx.html("Message: Client name can not be empty.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<NoAccountsFoundException> noAccountsFoundExceptionHandler = (e, ctx)->{
 		logger.warn("No Accounts found for the Client with specified ID. Exception Message: " + e.getMessage());
+		ctx.html("Message: No accounts found with with ID.");
 		ctx.status(400);
 	};
 
 	private ExceptionHandler<ClientNotDeletedException> clientNotDeletedExceptionHandler = (e, ctx)->{
 		logger.warn("Client could not be deleted from the Database properly. Exception Message: " + e.getMessage());
+		ctx.html("Message: Client could not be deleted.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<AccountNameNullException> accountNameNullExceptionHandler = (e, ctx)->{
 		logger.warn("Client Name can not be left blank. Exception Message: " + e.getMessage());
+		ctx.html("Message: Account name can not be empty.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<AccountBalanceNegativeException> accountBalanceNegativeExceptionHandler = (e, ctx)->{
 		logger.warn("Account Balance is either Negative or Null. Exception Message: " + e.getMessage());
+		ctx.html("Message: Account balance can not be negative.");
 		ctx.status(400);
 	};
 	
 	private ExceptionHandler<ClientAlreadyOnAccountException> clientAlreadyOnAccountExceptionHandler = (e, ctx)->{
 		logger.warn("Duplicate account-client dependencies. Error Message: " + e.getMessage());
+		ctx.html("Message: Client already exists on that account.");
 		ctx.status(409);
 	};
 	

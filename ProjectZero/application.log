@@ -9178,3 +9178,301 @@ java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
 10:08:44.967 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
 10:08:44.969 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
 10:08:44.973 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.743 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.768 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:10:40.780 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.789 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.800 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.810 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.814 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:10:40.820 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.826 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.841 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.854 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.863 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.865 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:10:40.870 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.892 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.893 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:10:40.901 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.907 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.909 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:10:40.913 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.917 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:10:40.922 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:10:40.924 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:10:40.927 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:29:31.875 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+10:29:31.915 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @932ms to org.eclipse.jetty.util.log.Slf4jLog
+10:29:31.917 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:29:32.239 [main] ERROR io.javalin.Javalin - Failed to start Javalin
+10:29:32.241 [main] INFO  io.javalin.Javalin - Stopping Javalin ...
+10:29:32.260 [main] INFO  io.javalin.Javalin - Javalin has stopped
+10:29:41.919 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+10:29:41.952 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @894ms to org.eclipse.jetty.util.log.Slf4jLog
+10:29:41.953 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:29:42.358 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+10:29:42.358 [main] INFO  io.javalin.Javalin - Javalin started in 406ms \o/
+10:33:33.443 [qtp501705927-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/abc' recieved.
+10:33:33.444 [qtp501705927-27] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:33:33.587 [qtp501705927-27] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID must be of type (int). User provided 'abc'.
+10:33:41.637 [qtp501705927-16] INFO  com.revature.application.Application - GET request to endpoint '/clients/5' recieved.
+10:33:41.637 [qtp501705927-16] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:33:41.640 [qtp501705927-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:33:41.677 [qtp501705927-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:33:41.680 [qtp501705927-16] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:33:41.681 [qtp501705927-16] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:39:46.466 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+10:39:46.537 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1355ms to org.eclipse.jetty.util.log.Slf4jLog
+10:39:46.538 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:39:47.051 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+10:39:47.051 [main] INFO  io.javalin.Javalin - Javalin started in 514ms \o/
+10:48:13.852 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+10:48:13.907 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1288ms to org.eclipse.jetty.util.log.Slf4jLog
+10:48:13.917 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+10:48:14.686 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+10:48:14.686 [main] INFO  io.javalin.Javalin - Javalin started in 777ms \o/
+10:49:24.573 [qtp501705927-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/5' recieved.
+10:49:24.575 [qtp501705927-27] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:49:24.731 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:49:24.784 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:49:24.788 [qtp501705927-27] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:49:24.789 [qtp501705927-27] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:49:31.434 [qtp501705927-16] INFO  com.revature.application.Application - GET request to endpoint '/clients/4' recieved.
+10:49:31.434 [qtp501705927-16] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:49:31.436 [qtp501705927-16] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:49:31.437 [qtp501705927-16] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:49:31.437 [qtp501705927-16] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:49:31.437 [qtp501705927-16] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:49:39.769 [qtp501705927-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/555' recieved.
+10:49:39.769 [qtp501705927-21] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:49:39.789 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:49:39.797 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:49:39.801 [qtp501705927-21] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Could not find client with ID of '555'.
+10:49:44.771 [qtp501705927-18] INFO  com.revature.application.Application - GET request to endpoint '/clients/abc' recieved.
+10:49:44.771 [qtp501705927-18] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:49:44.774 [qtp501705927-18] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID must be of type (int). User provided 'abc'.
+10:49:49.886 [qtp501705927-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/' recieved.
+10:49:49.886 [qtp501705927-21] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:49:49.887 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Accessing the database through the class com.revature.dao.ClientRepository
+10:49:49.890 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT * FROM client;
+10:49:49.891 [qtp501705927-21] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:49:50.341 [qtp501705927-21] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:50:00.098 [qtp501705927-18] INFO  com.revature.application.Application - POST request to endpoint '/clients' recieved.
+10:50:00.206 [qtp501705927-18] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:50:00.220 [qtp501705927-18] INFO  com.revature.dao.ClientRepository - Accessing the database through the class com.revature.dao.ClientRepository
+10:50:00.222 [qtp501705927-18] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: INSERT INTO client (client_first_name, client_last_name) VALUES (?,?)
+10:50:00.254 [qtp501705927-18] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:50:00.254 [qtp501705927-18] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:50:06.554 [qtp501705927-21] INFO  com.revature.application.Application - POST request to endpoint '/clients' recieved.
+10:50:06.555 [qtp501705927-21] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:50:06.568 [qtp501705927-21] WARN  c.r.controller.ExceptionController - Client Name can not be left blank. Please provide a first and last name for Client.
+10:50:18.598 [qtp501705927-18] INFO  com.revature.application.Application - POST request to endpoint '/clients' recieved.
+10:50:18.602 [qtp501705927-18] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:50:18.611 [qtp501705927-18] WARN  c.r.controller.ExceptionController - Client Name can not be left blank. Please provide a first and last name for Client.
+10:50:23.255 [qtp501705927-21] INFO  com.revature.application.Application - GET request to endpoint '/clients' recieved.
+10:50:23.255 [qtp501705927-21] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:50:23.255 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Accessing the database through the class com.revature.dao.ClientRepository
+10:50:23.274 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT * FROM client;
+10:50:23.284 [qtp501705927-21] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:50:23.306 [qtp501705927-21] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:51:19.626 [qtp501705927-15] INFO  com.revature.application.Application - GET request to endpoint '/clients' recieved.
+10:51:19.627 [qtp501705927-15] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:51:19.627 [qtp501705927-15] INFO  com.revature.dao.ClientRepository - Accessing the database through the class com.revature.dao.ClientRepository
+10:51:19.650 [qtp501705927-15] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT * FROM client;
+10:51:19.651 [qtp501705927-15] WARN  c.r.controller.ExceptionController - A user has requested access to Client table which is currently empty. Exception Message: There are currently no clients available to access in the 'client' table.
+10:51:40.421 [qtp501705927-27] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/2' recieved.
+10:51:40.422 [qtp501705927-27] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:51:40.426 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database through the class com.revature.dao.ClientRepository
+10:51:40.427 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT * FROM client WHERE client.id = ?;
+10:51:40.479 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT * FROM client WHERE client.id = ?;
+10:51:40.481 [qtp501705927-27] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:51:40.482 [qtp501705927-27] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:51:48.068 [qtp501705927-20] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/555' recieved.
+10:51:48.068 [qtp501705927-20] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:51:48.071 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database through the class com.revature.dao.ClientRepository
+10:51:48.072 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT * FROM client WHERE client.id = ?;
+10:51:48.072 [qtp501705927-20] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: There was no client in the database with the id of '555'.
+10:51:51.761 [qtp501705927-27] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/abc' recieved.
+10:51:51.761 [qtp501705927-27] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:51:51.776 [qtp501705927-27] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Client ID must be of type (int). User provided 'abc'.
+10:52:04.038 [qtp501705927-20] INFO  com.revature.application.Application - PUT request to endpoint '/clients/1' recieved.
+10:52:04.042 [qtp501705927-20] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:52:04.049 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:52:04.050 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:52:04.051 [qtp501705927-20] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:52:04.051 [qtp501705927-20] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:52:04.056 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database through the class com.revature.dao.ClientRepository
+10:52:04.194 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: UPDATE client SET client_first_name = ?, client_last_name = ? WHERE client.id = ?
+10:52:04.195 [qtp501705927-20] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:52:04.196 [qtp501705927-20] INFO  c.r.controller.ClientController - Endpoint to  mapped successfully!
+10:52:17.977 [qtp501705927-27] INFO  com.revature.application.Application - PUT request to endpoint '/clients/55' recieved.
+10:52:17.978 [qtp501705927-27] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:52:17.983 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:52:17.984 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:52:17.985 [qtp501705927-27] WARN  c.r.controller.ExceptionController - A user provided a bad parameter. Exception Message: Could not find client with ID of '55'.
+10:52:26.667 [qtp501705927-20] INFO  com.revature.application.Application - POST request to endpoint '/clients/9/accounts' recieved.
+10:52:26.700 [qtp501705927-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:52:26.704 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:52:26.705 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:52:26.705 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+10:52:26.747 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO account (account_type, account_name, account_balance) VALUES (?,?,?);
+10:52:26.748 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT LAST_INSERT_ID();
+10:52:26.768 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: INSERT INTO client_account(client_id,account_id)VALUES(?,?);
+10:52:26.770 [qtp501705927-20] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:52:26.771 [qtp501705927-20] INFO  c.r.controller.AccountController - Endpoint mapped successfully!
+10:52:39.801 [qtp501705927-27] INFO  com.revature.application.Application - POST request to endpoint '/clients/9/accounts' recieved.
+10:52:39.803 [qtp501705927-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:52:39.814 [qtp501705927-27] WARN  c.r.controller.ExceptionController - Account Balance is either Negative or Null. Exception Message: Account can not be created with an negative or null balance.
+10:53:00.748 [qtp501705927-20] INFO  com.revature.application.Application - POST request to endpoint '/clients/9/accounts' recieved.
+10:53:00.749 [qtp501705927-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:53:00.754 [qtp501705927-20] WARN  c.r.controller.ExceptionController - Account Type must either be 'checking' or 'savings'.
+10:53:15.316 [qtp501705927-27] INFO  com.revature.application.Application - POST request to endpoint '/clients/9/accounts' recieved.
+10:53:15.317 [qtp501705927-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:53:15.321 [qtp501705927-27] WARN  c.r.controller.ExceptionController - Client Name can not be left blank. Exception Message: Account could not be added because Account Name was null.
+10:53:21.695 [qtp501705927-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved.
+10:53:21.728 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:53:21.731 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:53:21.731 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+10:53:21.733 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT a.id AS AccountID, a.account_type AS AccountType, a.account_type AS AccountName, a.account_balance AS Balance FROM account AS a LEFT JOIN client_account AS ca ON a.id = ca.account_id LEFT JOIN client AS c ON c.id = ca.client_id WHERE c.id = ?;
+10:53:21.734 [qtp501705927-20] INFO  c.r.controller.AccountController - Endpoint to  mapped successfully!
+10:53:33.022 [qtp501705927-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=100'.
+10:53:33.024 [qtp501705927-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:53:33.028 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:53:33.029 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:53:33.029 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+10:53:33.029 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+10:53:33.047 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+10:53:33.047 [qtp501705927-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:53:33.048 [qtp501705927-27] INFO  c.r.controller.AccountController - Endpoint to  mapped successfully!
+10:53:42.384 [qtp501705927-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=100&amountLessThan=1000'.
+10:53:42.385 [qtp501705927-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:53:42.391 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:53:42.392 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:53:42.393 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+10:53:42.393 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with both parameters filled in.
+10:53:42.393 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+10:53:42.394 [qtp501705927-20] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:53:42.394 [qtp501705927-20] INFO  c.r.controller.AccountController - Endpoint to  mapped successfully!
+10:53:50.501 [qtp501705927-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountLessThan=10000'.
+10:53:50.501 [qtp501705927-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:53:50.505 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:53:50.507 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:53:50.507 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+10:53:50.507 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with less than parameters filled in.
+10:53:50.508 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+10:53:50.508 [qtp501705927-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:53:50.508 [qtp501705927-27] INFO  c.r.controller.AccountController - Endpoint to  mapped successfully!
+10:53:56.566 [qtp501705927-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts' recieved with QueryParameterString of 'amountGreaterThan=100'.
+10:53:56.566 [qtp501705927-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:53:56.570 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:53:56.571 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:53:56.571 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+10:53:56.571 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Preparing SQL Statement with greater than parameters filled in.
+10:53:56.572 [qtp501705927-20] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT account WHERE account_balance < greaterAmount AND account_balance > lesserAmount;
+10:53:56.572 [qtp501705927-20] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:53:56.572 [qtp501705927-20] INFO  c.r.controller.AccountController - Endpoint to  mapped successfully!
+10:54:06.099 [qtp501705927-27] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts/17' recieved.
+10:54:06.101 [qtp501705927-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:54:06.107 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:54:06.111 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:54:06.112 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Connecting to database inside the class com.revature.dao.AccountRepository
+10:54:06.117 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statment: SELECT a.id AS AccountID, a.account_type AS AccountType, a.account_type AS AccountName, a.account_balance AS Balance FROM account AS a LEFT JOIN client_account AS ca ON a.id = ca.account_id LEFT JOIN client AS c ON c.id = ca.client_id WHERE c.id = ? AND a.id = ?;
+10:54:06.117 [qtp501705927-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:54:06.117 [qtp501705927-27] INFO  c.r.controller.AccountController - Endpoint mapped successfully!
+10:54:17.179 [qtp501705927-20] INFO  com.revature.application.Application - GET request to endpoint '/clients/5/accounts/10' recieved.
+10:54:17.179 [qtp501705927-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:54:17.214 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:54:17.216 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:54:17.217 [qtp501705927-20] WARN  c.r.controller.ExceptionController - A user has requested access to an Account that does not belong to them! Exception Message: Account with ID of '10' does not belong to Client with ID of '5'.
+10:54:21.582 [qtp501705927-27] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/9/accounts/21' recieved.
+10:54:21.584 [qtp501705927-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:54:21.600 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:54:21.608 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:54:21.608 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Accessing the database through the class com.revature.dao.AccountRepository
+10:54:21.614 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: SELECT * FROM account WHERE account.id = ?;
+10:54:21.681 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: DELETE FROM account WHERE account.id = ?;
+10:54:21.682 [qtp501705927-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:54:21.683 [qtp501705927-27] INFO  c.r.controller.AccountController - Endpoint mapped successfully!
+10:54:24.321 [qtp501705927-20] INFO  com.revature.application.Application - DELETE request to endpoint '/clients/9/accounts/21' recieved.
+10:54:24.322 [qtp501705927-20] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:54:24.327 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:54:24.328 [qtp501705927-20] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:54:24.328 [qtp501705927-20] WARN  c.r.controller.ExceptionController - A user has requested access to an Account that does not belong to them! Exception Message: Account with ID of '21' does not belong to Client with ID of '9'.
+10:54:36.252 [qtp501705927-27] INFO  com.revature.application.Application - PUT request to endpoint '/clients/3/accounts/19' recieved.
+10:54:36.253 [qtp501705927-27] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:54:36.270 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:54:36.272 [qtp501705927-27] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:54:36.274 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Accessing the database through the class com.revature.dao.AccountRepository
+10:54:36.306 [qtp501705927-27] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: UPDATE account SET account_type = ?, account_name = ?, account_balance = ? WHERE account.id = ?
+10:54:36.306 [qtp501705927-27] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:54:36.306 [qtp501705927-27] INFO  c.r.controller.AccountController - Endpoint mapped successfully!
+10:55:12.116 [qtp501705927-21] INFO  com.revature.application.Application - POST request to endpoint '/clients/4/accounts/14' recieved.
+10:55:12.120 [qtp501705927-21] INFO  com.revature.service.AccountService - Curently performing business logic inside the class com.revature.service.AccountService
+10:55:12.127 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:55:12.128 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:55:12.128 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:55:12.129 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:55:12.130 [qtp501705927-21] INFO  com.revature.service.AccountService - Account belongs to Client with ID of '4'.
+10:55:12.130 [qtp501705927-21] INFO  com.revature.dao.AccountRepository - Accessing the database through the class com.revature.dao.AccountRepository
+10:55:12.250 [qtp501705927-21] INFO  com.revature.dao.AccountRepository - Executed SQL Statement: INSERT INTO client_account(client_id, account_id) VALUES (?, ?);
+10:55:12.251 [qtp501705927-21] INFO  com.revature.service.AccountService - SQL Query Success! Now back inside the class com.revature.service.AccountService
+10:55:12.251 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Accessing the database inside of the class com.revature.dao.ClientRepository
+10:55:12.253 [qtp501705927-21] INFO  com.revature.dao.ClientRepository - Executed SQL Statement: SELECT c.id, c.client_first_name, c.client_last_name, a.id AS account_id, a.account_type, a.account_name, a.account_balance FROM client AS c LEFT JOIN client_account AS ca ON c.id = ca.client_id LEFT JOIN account AS a ON a.id = ca.account_id WHERE c.id = ?;
+10:55:12.254 [qtp501705927-21] INFO  c.r.controller.AccountController - Endpoint mapped successfully!
+10:55:29.604 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.612 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:55:29.618 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.623 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.627 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.629 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.630 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:55:29.632 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.635 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.637 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.639 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.643 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.644 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:55:29.646 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.650 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.651 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:55:29.655 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.660 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.661 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:55:29.664 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.666 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:55:29.670 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:55:29.671 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:55:29.676 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
