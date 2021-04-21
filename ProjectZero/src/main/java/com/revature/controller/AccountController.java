@@ -190,8 +190,6 @@ public class AccountController implements Controller {
 		htmlString.append("<h1>Added Client To Account</h1>");
 		htmlString.append("<p><h3>ClientName: " + client.getFirstName() + " " + client.getLastName() + "</h3></p><hr>");
 
-		System.out.println(client.toString());
-
 		Account client_account = client.getAccounts().get(client.getAccounts().size() - 1);
 		htmlString.append("<p><b>Account Type:</b> " + client_account.getAccountType() + "<br>"
 				+ "<b>Account Name:</b> " + client_account.getAccountName() + "<br>" + "<b>Account Balance:</b> "
@@ -200,7 +198,6 @@ public class AccountController implements Controller {
 		ctx.html(htmlString.toString());
 		ctx.status(201);
 		logger.info("Endpoint mapped successfully!");
-
 	};
 
 	@Override

@@ -309,7 +309,7 @@ public class AccountService {
 			Client addedClient; 
 			if(ownsAccount == true) {
 				try {
-					addedClient = clientRepository.getClientById(Integer.valueOf(clientToBeAdded.getClientID())); 
+					addedClient = clientRepository.getClientById(Integer.valueOf(clientToBeAdded.getClientID()));
 					logger.info("Account belongs to Client with ID of '"+clientID+"'.");
 					boolean onAccount = false;
 					ArrayList<Account> added_client_accounts = addedClient.getAccounts(); 
@@ -321,6 +321,7 @@ public class AccountService {
 					if(onAccount == false) {
 						accountRepository.addClientToAccount(accountID, clientToBeAdded.getClientID());
 						connection.commit();
+						logger.info("SQL Query Success! Now back inside the " + this.getClass());
 					} else {
 						throw new ClientAlreadyOnAccountException("Client with ID of '" + addedClient.getId() + "' already listed on that account.");
 					}
@@ -330,7 +331,8 @@ public class AccountService {
 			}else {
 				throw new AccountDoesNotBelongToClientException("Account with ID of '"+ accountID +"' does not belong to Client with ID of '"+ clientID + "'."); 
 			}
-						
+			
+			addedClient = clientRepository.getClientById(Integer.valueOf(clientToBeAdded.getClientID())); 
 			return addedClient; 
 			
 		} catch (SQLException e) {

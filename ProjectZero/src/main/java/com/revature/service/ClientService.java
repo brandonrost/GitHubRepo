@@ -65,7 +65,11 @@ public class ClientService {
 			Client client = clientRepository.getClientById(id);
 			logger.info("SQL Query Success! Now back inside Service layer performing business logic.");
 			
-			return client;
+			if(client == null ) {
+				throw new ClientNotFoundException("Client with ID of '" + stringID + "' was not found.");
+			}else {
+				return client;
+			}
 
 		} catch (SQLException e3) {
 			throw new DatabaseException("Could not connect to the database." + e3.getMessage()); 
@@ -94,11 +98,8 @@ public class ClientService {
 			return client;
 
 		} catch (SQLException e) {
-			throw new DatabaseException(
-					"Something went wrong when trying to get a connection. " + "Exception message: " + e.getMessage());
-		} catch (EmptyClientNameException e2) {
-			throw new BadParameterException("Client first/last name can not be null. Please try again!"); 
-		}
+			throw new DatabaseException("Something went wrong when trying to get a connection. " + "Exception message: " + e.getMessage());
+		} 
 	}
 
 	public Client updateClient(String clientID, PutClientDTO clientDTO) throws BadParameterException, SQLException, DatabaseException, EmptyClientNameException {
