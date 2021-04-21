@@ -191,7 +191,7 @@ public class ClientServiceTest {
 
 	@Test
 	public void test_updateClient_happyPath()
-			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException {
+			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException, ClientNotFoundException {
 		try (MockedStatic<ConnectionUtil> mockedConnectionUtil = mockStatic(ConnectionUtil.class)) {
 			mockedConnectionUtil.when(ConnectionUtil::getConnection).thenReturn(mockConnection);
 
@@ -204,7 +204,7 @@ public class ClientServiceTest {
 	
 	@Test
 	public void test_updateClient_blankFirstName()
-			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException {
+			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException, ClientNotFoundException {
 		try (MockedStatic<ConnectionUtil> mockedConnectionUtil = mockStatic(ConnectionUtil.class)) {
 			mockedConnectionUtil.when(ConnectionUtil::getConnection).thenReturn(mockConnection);
 
@@ -220,7 +220,7 @@ public class ClientServiceTest {
 	
 	@Test
 	public void test_updateClient_blankLastName()
-			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException {
+			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException, ClientNotFoundException {
 		try (MockedStatic<ConnectionUtil> mockedConnectionUtil = mockStatic(ConnectionUtil.class)) {
 			mockedConnectionUtil.when(ConnectionUtil::getConnection).thenReturn(mockConnection);
 
@@ -236,7 +236,7 @@ public class ClientServiceTest {
 	
 	@Test
 	public void test_updateClient_blankFirstName_withSpaces()
-			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException {
+			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException, ClientNotFoundException {
 		try (MockedStatic<ConnectionUtil> mockedConnectionUtil = mockStatic(ConnectionUtil.class)) {
 			mockedConnectionUtil.when(ConnectionUtil::getConnection).thenReturn(mockConnection);
 
@@ -252,7 +252,7 @@ public class ClientServiceTest {
 	
 	@Test
 	public void test_updateClient_blankLastName_withSpaces()
-			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException {
+			throws SQLException, BadParameterException, DatabaseException, EmptyClientNameException, ClientNotFoundException {
 		try (MockedStatic<ConnectionUtil> mockedConnectionUtil = mockStatic(ConnectionUtil.class)) {
 			mockedConnectionUtil.when(ConnectionUtil::getConnection).thenReturn(mockConnection);
 
@@ -275,10 +275,10 @@ public class ClientServiceTest {
 			Client actual = clientService.updateClient("3", new PutClientDTO("Billy", "Bonkers"));
 			Client expected = new Client("3", "Billy", "Bonkers");
 			
-			fail("EmptyClientNameException was not thrown.");
+			fail("ClientNotFoundException was not thrown.");
 			
-		} catch(EmptyClientNameException e) {
-			assertEquals(e.getMessage(), "Client name can not be null. Please fill in first and last name."); 
+		} catch(ClientNotFoundException e) {
+			assertEquals(e.getMessage(), "Client with ID of '3' was not found."); 
 		}
 	}
 }

@@ -9154,3 +9154,27 @@ java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
 09:58:37.357 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
 09:58:37.358 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
 09:58:37.360 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.907 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.914 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:08:44.919 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.923 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.926 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.929 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.931 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:08:44.933 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.936 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.939 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.941 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.942 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.943 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:08:44.945 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.948 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.949 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:08:44.951 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.954 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.955 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:08:44.958 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.960 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:08:44.967 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+10:08:44.969 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+10:08:44.973 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService

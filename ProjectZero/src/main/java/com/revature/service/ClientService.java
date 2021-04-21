@@ -102,7 +102,7 @@ public class ClientService {
 		} 
 	}
 
-	public Client updateClient(String clientID, PutClientDTO clientDTO) throws BadParameterException, SQLException, DatabaseException, EmptyClientNameException {
+	public Client updateClient(String clientID, PutClientDTO clientDTO) throws BadParameterException, SQLException, DatabaseException, EmptyClientNameException, ClientNotFoundException {
 		logger.info("Performing business logic now inside of the " + this.getClass());
 		try {
 			Connection connection = ConnectionUtil.getConnection();
@@ -119,6 +119,9 @@ public class ClientService {
 			connection.commit();
 			logger.info("SQL Query Success! Now back inside Service layer performing business logic.");
 			
+			if(client == null) {
+				throw new ClientNotFoundException("Client with ID of '" + clientID + "' was not found."); 
+			}
 			
 			return client; 
 			
