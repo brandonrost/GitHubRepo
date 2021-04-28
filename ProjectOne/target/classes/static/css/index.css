@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5em;
+}
+
+body {
+    background-color: #d0bdf4;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.homePageSlogan{
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-style: ridge;
+    background-color: rgba(224, 179, 228, 0.384);
+    max-width: 375px;
+    float: left;
+    padding: 10px;
+}
+
+.registerAndSignupDiv{
+    border-style: ridge;
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
+    background-color: rgba(224, 179, 228, 0.384);
+    color: #8458B3;
+    float: right;
+    max-width: 375px;
+    height: 200px;
+    font-size: 20px;
+    margin-right: 15px;
+    margin-top: 85px;
+    padding: 40px;
+    text-align: center; 
+    line-height:32px;   
+}
+
+.registerButton {
+    width: 30px;
+    height: 20px;
+    border-style:outset;
+    border-color: #a28089;
+    border-width: 2px;
+    background-color: #8458B3;
+    box-sizing: content-box;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px;
+    align-self: center;
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.loginButton {
+    width: 30px;
+    height: 20px;
+    border-style: outset; 
+    border-color: #a28089;
+    border-width: 2px;
+    background-color: #8458B3;
+    box-sizing: content-box;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px;
+    align-self: center;
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 600px) {
+    #navbar {
+        background-color: rgb(128,75,133);
+        overflow: auto;
+    }
+    
+    #navbar a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        text-emphasis: bold;
+        font-size: 17px;
+    }
+    
+    #navbar a:hover {
+        color:#d0bdf4;
+    }
+    
+    .logo {
+        color: #fff;
+    }
+    
+    #navbar img {
+        float: left;
+        padding-top: 0px;
+        width: 300px;
+        height: 100px;
+    }
+    
+    #navbar ul {
+        list-style: none;
+        float: right;
+    }
+    
+    #navbar ul li {
+        display: inline-block;
+        padding: 12px;
+    }
+
+    .active {
+        color: #a0d2eb;
+    }
+
+    .homePageSlogan {
+        height: 75%;
+        margin-top: 100px;
+        margin-left: 25px;
+        float: left;
+        color: #8458B3;
+        font-size: 25px;
+        line-height: normal;
+        max-width: 250px;
+        justify-content: space-evenly;
+    }
+    
+    .bigText {
+        font-size: 30px;
+        font-weight: bold;
+        border-width: 0;
+    }
+
+    .registerAndSignupDiv{
+        float: left;
+        margin-left: 25px;
+        margin-top: 5px;
+        max-width: 250px;
+        font-size: 15px;
+    }
+    
+}
+
+@media only screen and (min-width: 601px) and (max-width: 999px) {
+    #navbar {
+        background: rgb(128,75,133);
+        overflow: auto;
+    }
+    
+    #navbar a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        text-emphasis: bold;
+        font-size:17px;
+    }
+    
+    #navbar a:hover {
+        color: #d0bdf4;
+    }
+    
+    .logo {
+        color: #fff;
+    }
+
+    #navbar img {
+        float: left;
+        padding-top: 0px;
+        width: 300px;
+        height: 100px;
+    }
+    
+    #navbar ul {
+        list-style: none;
+        float: right;
+    }
+    
+    #navbar ul li {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .active {
+        color: #a0d2eb;
+    }
+
+    .homePageSlogan {
+        height: 75%;
+        margin-left: 25px;
+        margin-top: 85px;
+        float: left;
+        color: #8458B3;
+        font-size: 25px;
+        line-height:normal;
+        text-justify:inter-word; 
+        max-width: 250px;
+    }
+    
+    .bigText {
+        font-size: 30px;
+        font-weight: bold;
+        border-width: 0;
+    }
+
+
+}
+
+
+@media only screen and (min-width: 1000px) {
+    #navbar {
+        background: rgb(128,75,133);
+        overflow: auto;
+    }
+    
+    #navbar a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        text-emphasis: bold;
+        font-size:20px;
+    }
+    
+    #navbar a:hover {
+        color: #d0bdf4;
+    }
+    
+    .logo {
+        color: #fff;
+    }
+
+    #navbar img {
+        float: left;
+        padding-top: 0px;
+        width:  400px;
+        height: 150px;
+    }
+    
+    #navbar ul {
+        list-style: none;
+        float: right;
+        margin-top: 30px;
+    }
+    
+    #navbar ul li {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .active {
+        color: #a0d2eb;
+    }
+
+    .homePageSlogan {
+        height: 75%;
+        margin-left: 25px;
+        margin-top: 85px;
+        float: left;
+        color: #8458B3;
+        font-size: 40px;
+        line-height:normal;
+        text-justify:inter-word;
+    }
+    
+    .bigText {
+        font-size: 45px;
+        font-weight: bold;
+        border-width: 0;
+    }
+
+    
+}
+

@@ -22,6 +22,7 @@ public class StaticFileController implements Controller {
 			byte[] ourFileInBytes = baos.toByteArray(); 
 			
 			String html = new String(ourFileInBytes);
+			
 			ctx.html(html);
 			ctx.status(200);
 		};

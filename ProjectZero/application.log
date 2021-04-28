@@ -9513,3 +9513,5 @@ java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
 15:51:15.063 [main] INFO  io.javalin.Javalin - Starting Javalin ...
 15:51:15.466 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
 15:51:15.467 [main] INFO  io.javalin.Javalin - Javalin started in 407ms \o/
+03:19:09.396 [qtp501705927-21] INFO  com.revature.application.Application - GET request to endpoint '/clients/5' recieved.
+03:19:09.497 [qtp501705927-21] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
