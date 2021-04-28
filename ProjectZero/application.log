@@ -9476,3 +9476,40 @@ java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
 10:55:29.670 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
 10:55:29.671 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
 10:55:29.676 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.681 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.697 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+14:21:50.755 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.764 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.766 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.768 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.771 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+14:21:50.772 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.774 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.776 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.777 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.779 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.780 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+14:21:50.781 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.783 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.784 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+14:21:50.786 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.788 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.789 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+14:21:50.791 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.792 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+14:21:50.794 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+14:21:50.795 [main] INFO  com.revature.service.ClientService - SQL Query Success! Now back inside Service layer performing business logic.
+14:21:50.796 [main] INFO  com.revature.service.ClientService - Performing business logic now inside of the class com.revature.service.ClientService
+15:51:14.826 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+15:51:15.058 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1186ms to org.eclipse.jetty.util.log.Slf4jLog
+15:51:15.063 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15:51:15.466 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+15:51:15.467 [main] INFO  io.javalin.Javalin - Javalin started in 407ms \o/
