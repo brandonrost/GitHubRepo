@@ -27,7 +27,7 @@
 		3. validate - validate existing tables against class mappings. If validation fails, application will not work
 		properly
 		4. create-drop - same as create, but will drop all tables once SessionFactory is closed -->
-		<property name="hbm2ddl.auto">validate</property>
+		<property name="hbm2ddl.auto">create</property>
 		
 		<!-- Specify our entity/class mappings here -->
 		<mapping class="com.revature.models.Reimbursement"></mapping>

@@ -1777,3 +1777,303 @@
 17:50:21.810 [main] INFO  io.javalin.Javalin - Starting Javalin ...
 17:50:22.164 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
 17:50:22.164 [main] INFO  io.javalin.Javalin - Javalin started in 355ms \o/
+11:13:50.552 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @756ms to org.eclipse.jetty.util.log.Slf4jLog
+11:13:50.651 [main] INFO  io.javalin.Javalin - Static file handler added:
+    {urlPathPrefix: "/", path: "static", location: Location.CLASSPATH}
+    Resolved path: 'file:///C:/Users/Musta/OneDrive/Desktop/Workspace/ProjectOne/target/classes/static/'
+11:13:50.712 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+11:13:50.714 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+11:13:51.059 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+11:13:51.060 [main] INFO  io.javalin.Javalin - Javalin started in 347ms \o/
+11:16:48.645 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1248ms to org.eclipse.jetty.util.log.Slf4jLog
+11:16:48.751 [main] INFO  io.javalin.Javalin - Static file handler added:
+    {urlPathPrefix: "/", path: "static", location: Location.CLASSPATH}
+    Resolved path: 'file:///C:/Users/Musta/OneDrive/Desktop/Workspace/ProjectOne/target/classes/static/'
+11:16:48.809 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+11:16:48.812 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+11:16:49.577 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+11:16:49.577 [main] INFO  io.javalin.Javalin - Javalin started in 767ms \o/
+14:55:50.770 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+14:55:54.032 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+14:55:54.058 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:55:54.605 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+14:55:54.611 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+14:55:54.612 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+14:55:54.612 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+14:55:54.616 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+14:55:57.492 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+14:55:59.009 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+14:55:59.282 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:55:59.420 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:55:59.446 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+14:55:59.448 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:55:59.488 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:55:59.556 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+14:55:59.558 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:55:59.606 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+14:56:00.309 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+14:56:05.126 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+14:56:10.922 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:57:30.669 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+14:57:31.496 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+14:57:31.523 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:57:31.830 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+14:57:31.835 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+14:57:31.836 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+14:57:31.836 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+14:57:31.841 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+14:57:31.993 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+14:57:32.483 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+14:57:32.788 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:57:32.926 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:57:32.945 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+14:57:32.946 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:57:32.962 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:57:32.978 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+14:57:32.979 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:57:33.000 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+14:57:33.679 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+14:57:35.280 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+14:57:42.628 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:59:37.483 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+14:59:38.289 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+14:59:38.327 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:59:38.678 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+14:59:38.686 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+14:59:38.687 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+14:59:38.687 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+14:59:38.691 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+14:59:38.861 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+14:59:39.522 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+14:59:39.920 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:59:40.106 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:59:40.130 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+14:59:40.131 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:59:40.156 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:59:40.178 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+14:59:40.182 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+14:59:40.212 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+14:59:41.143 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+14:59:42.550 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+14:59:48.788 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:01:29.466 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+15:01:30.261 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+15:01:30.291 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:01:30.630 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+15:01:30.639 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+15:01:30.640 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+15:01:30.640 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+15:01:30.644 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+15:01:30.830 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+15:01:31.502 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+15:01:31.916 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:01:32.115 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:01:32.139 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+15:01:32.140 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:01:32.164 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:01:32.190 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+15:01:32.191 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:01:32.215 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+15:01:33.143 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:01:34.685 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:01:40.372 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:03:03.224 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+15:03:04.042 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+15:03:04.073 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:03:04.422 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+15:03:04.430 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+15:03:04.430 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+15:03:04.430 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+15:03:04.435 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+15:03:04.611 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+15:03:05.289 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+15:03:05.653 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:03:05.842 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:03:05.868 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+15:03:05.869 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:03:05.890 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:03:05.911 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+15:03:05.913 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:03:05.943 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+15:03:06.834 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:03:08.280 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:03:15.093 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:03:59.322 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+15:04:00.140 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+15:04:00.166 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:04:00.456 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+15:04:00.463 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+15:04:00.464 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+15:04:00.464 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+15:04:00.468 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+15:04:00.637 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+15:04:01.447 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+15:04:01.846 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:04:02.044 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:04:02.069 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+15:04:02.070 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:04:02.098 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:04:02.120 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+15:04:02.122 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:04:02.147 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+15:04:03.092 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:04:04.616 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:04:10.751 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:04:11.296 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @13238ms to org.eclipse.jetty.util.log.Slf4jLog
+15:04:11.388 [main] INFO  io.javalin.Javalin - Static file handler added:
+    {urlPathPrefix: "/", path: "static", location: Location.CLASSPATH}
+    Resolved path: 'file:///C:/Users/Musta/OneDrive/Desktop/Workspace/ProjectOne/target/classes/static/'
+15:04:11.433 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+15:04:11.435 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15:04:11.645 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+15:04:11.646 [main] INFO  io.javalin.Javalin - Javalin started in 213ms \o/
+15:17:15.071 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+15:17:15.804 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+15:17:15.830 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:17:16.139 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+15:17:16.146 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+15:17:16.146 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+15:17:16.147 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+15:17:16.151 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+15:17:16.324 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+15:17:17.397 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+15:17:17.680 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:17:17.831 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:17:17.851 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+15:17:17.852 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:17:17.875 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:17:17.900 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+15:17:17.902 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:17:17.924 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+15:17:18.763 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:17:24.058 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:17:29.713 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:17:30.192 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @16346ms to org.eclipse.jetty.util.log.Slf4jLog
+15:17:30.264 [main] INFO  io.javalin.Javalin - Static file handler added:
+    {urlPathPrefix: "/", path: "static", location: Location.CLASSPATH}
+    Resolved path: 'file:///C:/Users/Musta/OneDrive/Desktop/Workspace/ProjectOne/target/classes/static/'
+15:17:30.302 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+15:17:30.303 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15:17:30.502 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+15:17:30.502 [main] INFO  io.javalin.Javalin - Javalin started in 200ms \o/
+15:22:42.212 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+15:22:43.009 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+15:22:43.043 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:22:43.398 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+15:22:43.407 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+15:22:43.407 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+15:22:43.407 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+15:22:43.411 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+15:22:43.704 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+15:22:44.420 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+15:22:44.815 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:22:45.020 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+15:22:45.021 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:22:45.056 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:22:45.083 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+15:22:45.084 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:22:45.119 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+15:22:45.120 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:22:46.076 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e8279e5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:22:46.278 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:22:46.817 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @5873ms to org.eclipse.jetty.util.log.Slf4jLog
+15:22:46.929 [main] INFO  io.javalin.Javalin - Static file handler added:
+    {urlPathPrefix: "/", path: "static", location: Location.CLASSPATH}
+    Resolved path: 'file:///C:/Users/Musta/OneDrive/Desktop/Workspace/ProjectOne/target/classes/static/'
+15:22:46.975 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+15:22:46.977 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15:22:47.198 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+15:22:47.198 [main] INFO  io.javalin.Javalin - Javalin started in 223ms \o/
+15:33:34.551 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+15:33:35.489 [main] WARN  org.hibernate.orm.deprecation - HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
+15:33:35.526 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:33:35.936 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+15:33:35.944 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.mariadb.jdbc.Driver] at URL [jdbc:mariadb://localhost:3306/project_one]
+15:33:35.945 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+15:33:35.945 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+15:33:35.950 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+15:33:36.177 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+15:33:37.122 [main] WARN  n.s.e.config.ConfigurationFactory - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Musta/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+15:33:37.580 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.Reimbursement] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:33:37.840 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.StatusCode] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:33:37.868 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.StatusCode]]
+15:33:37.869 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:33:37.888 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.ReimbursementType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:33:37.910 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.ReimbursementType]]
+15:33:37.911 [main] WARN  org.hibernate.orm.cache - HHH90001006: Missing cache[com.revature.models.UserType] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.cache.ehcache.missing_cache_strategy' to 'create'.
+15:33:37.934 [main] WARN  org.hibernate.orm.cache - HHH90001003: Read-only caching was requested for mutable entity [NavigableRole[com.revature.models.UserType]]
+15:33:38.902 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@64b0d1fa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:33:40.714 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@12219f6a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+15:33:49.029 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:33:49.727 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @16853ms to org.eclipse.jetty.util.log.Slf4jLog
+15:33:49.871 [main] INFO  io.javalin.Javalin - Static file handler added:
+    {urlPathPrefix: "/", path: "static", location: Location.CLASSPATH}
+    Resolved path: 'file:///C:/Users/Musta/OneDrive/Desktop/Workspace/ProjectOne/target/classes/static/'
+15:33:49.942 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+15:33:49.944 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15:33:50.214 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+15:33:50.215 [main] INFO  io.javalin.Javalin - Javalin started in 272ms \o/
+16:00:58.630 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @1488ms to org.eclipse.jetty.util.log.Slf4jLog
+16:00:58.793 [main] INFO  io.javalin.Javalin - Static file handler added:
+    {urlPathPrefix: "/", path: "static", location: Location.CLASSPATH}
+    Resolved path: 'file:///C:/Users/Musta/OneDrive/Desktop/Workspace/ProjectOne/target/classes/static/'
+16:00:58.927 [main] INFO  io.javalin.Javalin - 
+           __                      __ _
+          / /____ _ _   __ ____ _ / /(_)____
+     __  / // __ `/| | / // __ `// // // __ \
+    / /_/ // /_/ / | |/ // /_/ // // // / / /
+    \____/ \__,_/  |___/ \__,_//_//_//_/ /_/
+
+        https://javalin.io/documentation
+
+16:00:58.932 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+16:01:00.388 [main] INFO  io.javalin.Javalin - Listening on http://localhost:7000/
+16:01:00.389 [main] INFO  io.javalin.Javalin - Javalin started in 1461ms \o/

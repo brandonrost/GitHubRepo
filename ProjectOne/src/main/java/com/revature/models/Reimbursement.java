@@ -1,7 +1,7 @@
 package com.revature.models;
 
 import java.sql.Blob;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -33,10 +33,10 @@ public class Reimbursement {
 	
 	@Column(name = "reimb_submitted",
 			nullable = false)
-	private Date reimb_submit_time; 
+	private LocalDateTime reimb_submit_time; 
 	
 	@Column(name = "reimb_resolved")
-	private Date reimb_resolve_time; 
+	private LocalDateTime reimb_resolve_time; 
 	
 	@Column(name = "reimb_description")
 	private String reimb_desc; 
@@ -62,7 +62,7 @@ public class Reimbursement {
 		super();
 	}
 	
-	public Reimbursement(float reimb_amount, Date reimb_submit_time, User reimb_author,
+	public Reimbursement(float reimb_amount, LocalDateTime reimb_submit_time, User reimb_author,
 			StatusCode reimb_status, ReimbursementType reimb_type) {
 		super();
 		this.reimb_amount = reimb_amount;
@@ -96,19 +96,19 @@ public class Reimbursement {
 		this.reimb_amount = reimb_amount;
 	}
 
-	public Date getReimb_submit_time() {
+	public LocalDateTime getReimb_submit_time() {
 		return reimb_submit_time;
 	}
 
-	public void setReimb_submit_time(Date reimb_submit_time) {
+	public void setReimb_submit_time(LocalDateTime reimb_submit_time) {
 		this.reimb_submit_time = reimb_submit_time;
 	}
 
-	public Date getReimb_resolve_time() {
+	public LocalDateTime getReimb_resolve_time() {
 		return reimb_resolve_time;
 	}
 
-	public void setReimb_resolve_time(Date reimb_resolve_time) {
+	public void setReimb_resolve_time(LocalDateTime reimb_resolve_time) {
 		this.reimb_resolve_time = reimb_resolve_time;
 	}
 
